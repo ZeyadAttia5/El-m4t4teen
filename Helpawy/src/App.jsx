@@ -1,11 +1,12 @@
 import './App.css'
-import Student from './Student.jsx'
+import TransportationPicker from './TransportationPicker/TransportationPicker.jsx'
 
 function App() {
 
   return (
     <>
-      <Student name="Ahmed" />
+      {/* <Student name="Ahmed" /> */}
+      <TransportationPicker />
     </>
   )
 }
