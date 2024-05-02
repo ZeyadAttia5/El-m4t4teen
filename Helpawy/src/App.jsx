@@ -6,7 +6,7 @@ import ChooseItemTypePage from './ChooseItemTypePage/ChooseItemTypePage.jsx'; //
 import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
 import { BrowserRouter as Router } from 'react-router-dom';
 
-
+//comment
 function App() {
 
   return (
