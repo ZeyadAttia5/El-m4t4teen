@@ -1,0 +1,33 @@
+/* App.css or any other CSS file where you define styles */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.form-field {
+    margin-bottom: 20px; /* Add spacing between form fields */
+  }
+  
+  /* Adjust the border and placeholder behavior for all form fields */
+  .form-field .MuiOutlinedInput-root {
+    border-radius: 8px; /* Adjust the border radius as needed */
+  }
+  
+  /* Style the placeholder text */
+  .form-field .MuiInputLabel-root.Mui-focused {
+    transform: translate(14px, -8px) scale(0.75); /* Adjust the position of the placeholder text */
+    background-color: #fff; /* Ensure the placeholder background matches the input field */
+    padding: 0 4px; /* Adjust padding as needed */
+  }
+  
+
+.submit-button {
+    margin-top: 15px;
+}
+
