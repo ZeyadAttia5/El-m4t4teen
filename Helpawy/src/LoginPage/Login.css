@@ -1,0 +1,45 @@
+/* Container style */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+  
+  /* Title style */
+  .login-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Input style */
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: none;
+  }
+  
+  /* Button style */
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for button */
+  .login-button:hover {
+    background-color: #ccc; /* Light gray background on hover */
+  }
+  
+  /* Label style */
+  .login-label {
+    color: #fff; /* White text */
+  }
+  

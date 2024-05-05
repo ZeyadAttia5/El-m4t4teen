@@ -1,0 +1,16 @@
+.login-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for button */
+  .login-button:hover {
+    background-color: #ccc; /* Light gray background on hover */
+  }
+  
