@@ -20,7 +20,7 @@ function App() {
         <RedirectionButton title="Add Item" />
       </Router>
       <Router>
-        <LoginRedirect title= "Are you an admin ?"/>
+        <LoginRedirect title= "Log in as an admin"/>
         <Routes>
           <Route path ="admin" element={<AdminPage/>}/>
         </Routes>

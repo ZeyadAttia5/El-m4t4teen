@@ -1,15 +1,16 @@
-import React from 'react'
-import LoginForm from './Login';
-import './AdminPage.css'
+// AdminPage.jsx
 
-function AdminPage(){
-    return(
-        <><div>This is the admin page</div>
-        <LoginForm />
-        </>
-    );
+import React from 'react';
+import OrganizationView from '../OrganizationView/OrganizationView';
+import DonorView from '../DonorView/DonorView';
 
-
-
-}
+const AdminPage = () => {
+  return (
+    <div>
+      <h2>Welcome to the Admin Page</h2>
+      <OrganizationView /> 
+      <DonorView/>   
+      </div>
+  );
+};
 export default AdminPage;

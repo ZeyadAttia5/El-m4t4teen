@@ -1,0 +1,19 @@
+/* donorView.css */
+
+.donor-list {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .donor-item {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .donor-item:hover {
+    background-color: #f0f0f0;
+  }
+  
