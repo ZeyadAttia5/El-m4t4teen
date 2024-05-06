@@ -3,13 +3,17 @@
 import React from 'react';
 import OrganizationView from '../OrganizationView/OrganizationView';
 import DonorView from '../DonorView/DonorView';
+import AcceptReject from '../AcceptReject/AcceptReject';
+import ViewRegButton from '../ViewRegOrg/ViewRegButton';
 
 const AdminPage = () => {
   return (
     <div>
-      <h2>Welcome to the Admin Page</h2>
+      <h2>Admin Options</h2>
       <OrganizationView /> 
-      <DonorView/>   
+      <DonorView/>  
+      <AcceptReject/> 
+      <ViewRegButton/>
       </div>
   );
 };

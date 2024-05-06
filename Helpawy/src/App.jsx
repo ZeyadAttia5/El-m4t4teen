@@ -7,6 +7,7 @@ import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
 import LoginRedirect from './RedirectToLogin/LoginRedirect.jsx'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import AdminPage from 'C:/Users/Seif/Documents/GitHub/El-m4t4teen/Helpawy/src/LoginPage/AdminPage.jsx';
+import RequestCard from './RequestPost/RequestCard.jsx';
 
 //comment
 function App() {
@@ -16,6 +17,9 @@ function App() {
     <TransportationPicker/>
     <SchedulePicker/>
     <ScheduleDropoff/>
+    <div>
+      <RequestCard/>
+    </div>
       <Router>
         <RedirectionButton title="Add Item" />
       </Router>
