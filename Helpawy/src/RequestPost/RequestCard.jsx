@@ -220,9 +220,235 @@ const RequestCard = () => {
             <Input
               type="file"
               name="picture"
+              className='additional-input'
               onChange={handleInputChange}
             />
 
+          </>
+        );
+      case 'Food':
+        return (
+          <>
+            <TextField
+              name='name'
+              placeholder='e.g. beans'
+              type='text'
+              className='additional-input'
+              value={additionalFields.name || ''} // Set default value here
+              onChange={handleInputChange}
+              label="name"
+            />
+
+            <Select
+              name='category'
+              className='additional-input'
+              value={additionalFields.category || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="category"
+            >
+              <MenuItem value="default">Select a Category</MenuItem>
+              <MenuItem value="fruitsAndVegetables">Fruits and Vegetables</MenuItem>
+              <MenuItem value="cannedFoods">Canned Foods</MenuItem>
+              <MenuItem value="freshMeals">Fresh Meals</MenuItem>
+              <MenuItem value="bakedGoods">Baked Goods</MenuItem>
+            </Select>
+
+            <TextField
+              name='quantity'
+              placeholder='e.g. 1'
+              type='number'
+              className='additional-input'
+              value={additionalFields.quantity || ''} // Set default value here
+              onChange={handleInputChange}
+              label={additionalFields.category === 'fruitsAndVegetables' ? 'Quantity (Kg)' : 'Quantity (Amount)'}
+            />
+          </>
+        );
+      case 'Medical Supplies':
+        return (
+          <>
+            <Select
+              name='type'
+              className='additional-input'
+              value={additionalFields.type || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="type"
+            >
+              <MenuItem value="default">Select a Category</MenuItem>
+              <MenuItem value="medicalDevices">Medical Devices</MenuItem>
+              <MenuItem value="medicalEquipment">Medical Equipment</MenuItem>
+              <MenuItem value="medication">Medication</MenuItem>
+            </Select>
+            <Select
+              name='usage'
+              className='additional-input'
+              value={additionalFields.usage || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="Usage"
+            >
+              <MenuItem value="default">Select the Usage</MenuItem>
+              <MenuItem value="respiratorySupport">Respiratory Support</MenuItem>
+              <MenuItem value="heartMonitoring">Heart Monitoring</MenuItem>
+              <MenuItem value="diabetesManagement">Diabetes Management</MenuItem>
+              <MenuItem value="surgicalInstruments">Surgical Instruments</MenuItem>
+              <MenuItem value="imaging">Imaging</MenuItem>
+              <MenuItem value="homeCare">Home Care</MenuItem>
+            </Select>
+            <TextField
+              name='quantity'
+              placeholder='e.g. 1'
+              type='number'
+              className='additional-input'
+              value={additionalFields.quantity || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Quantity'
+            />
+            <Input
+              type="file"
+              name="picture"
+              className='additional-input'
+              onChange={handleInputChange}
+            />
+          </>
+
+
+        );
+
+      case 'School Supplies':
+        return (
+          <>
+            <Select
+              name='type'
+              className='additional-input'
+              value={additionalFields.type || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="type"
+            >
+              <MenuItem value="default">Select a Category</MenuItem>
+              <MenuItem value="stationary">Stationary</MenuItem>
+              <MenuItem value="books">Books</MenuItem>
+              {/* <MenuItem value="bags">Bags</MenuItem>
+              <MenuItem value="uniforms">Uniforms</MenuItem>
+              <MenuItem value="electronics">Electronics</MenuItem> */}
+            </Select>
+
+            {/* show book name, author, language, edition, short summary of the book, a picture of the book and the quantity required */}
+            {additionalFields.type === 'books' && (
+              <>
+                <TextField
+                  name='title'
+                  placeholder='e.g. Math Book'
+                  type='text'
+                  className='additional-input'
+                  value={additionalFields.title || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Title'
+                />
+                <TextField
+                  name='author'
+                  placeholder='e.g. Ehab Tawfik'
+                  type='text'
+                  className='additional-input'
+                  value={additionalFields.author || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Author'
+                />
+                <TextField
+                  name='language'
+                  placeholder='e.g. English'
+                  type='text'
+                  className='additional-input'
+                  value={additionalFields.language || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Language'
+                />
+                <TextField
+                  name='edition'
+                  placeholder='e.g. 1'
+                  type='number'
+                  className='additional-input'
+                  value={additionalFields.edition || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Edition'
+                />
+
+                <TextField
+                  name='summary'
+                  placeholder='e.g. Math Book'
+                  type='text'
+                  className='additional-input'
+                  value={additionalFields.summary || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Summary'
+                />
+                <TextField
+                  name='quantity'
+                  placeholder='e.g. 1'
+                  type='number'
+                  className='additional-input'
+                  value={additionalFields.quantity || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Quantity'
+                />
+                <Input
+                  type="file"
+                  name="picture"
+                  className='additional-input'
+                  onChange={handleInputChange}
+                />
+              </>
+            )}
+            {additionalFields.type === 'stationary' && (
+              <>
+                <Select
+                  name='category'
+                  className='additional-input'
+                  value={additionalFields.category || 'default'} // Set default value here
+                  onChange={handleInputChange}
+                  label="category"
+                >
+                  <MenuItem value="default">Select a Category</MenuItem>
+                  <MenuItem value="pencils">Pencils</MenuItem>
+                  <MenuItem value="pens">Pens</MenuItem>
+                  <MenuItem value="notebooks">Notebooks</MenuItem>
+                  <MenuItem value="erasers">Erasers</MenuItem>
+                  <MenuItem value="rulers">Rulers</MenuItem>
+                  <MenuItem value="glue">Glue</MenuItem>
+                  <MenuItem value="scissors">Scissors</MenuItem>
+                  <MenuItem value="highlighters">Highlighters</MenuItem>
+                </Select>
+                <TextField
+                  name='quantity'
+                  placeholder='e.g. 1'
+                  type='number'
+                  className='additional-input'
+                  value={additionalFields.quantity || ''} // Set default value here
+                  onChange={handleInputChange}
+                  label='Quantity'
+                />
+              </>
+            )}
+            {/* <TextField
+              name='alreadyDonated'
+              placeholder='e.g. 10'
+              type='number'
+              className='additional-input'
+              value={additionalFields.alreadyDonated || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Already Donated'
+            /> */}
+          </>
+        );
+      case 'Blood Donations':
+        return (
+          <>
+            <Select
+              name='bloodGroup'
+              className='additional-input'
+              value={additionalFields.bloodGroup || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="blood-group"
+            />
           </>
         );
       // Add cases for other categories here
