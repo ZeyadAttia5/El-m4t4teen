@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
-import ChooseItemType from '../ChooseItemTypePage/ChooseItemTypePage.jsx';
+import ChooseItemType from '../RequestPost/RequestCard.jsx';
 
 import './RedirectionButton.css';
 
@@ -12,13 +12,13 @@ const RedirectionButton = ({ title }) => {
 
     const handleAddItemClick = () => {
         navigateTo('/choose-item-type');
-        setButtonVisible(false);
+        // setButtonVisible(false);
     };
 
     return (
         <div>
             {buttonVisible && (
-                <button className="redirection-button" onClick={handleAddItemClick}>
+                <button className='Redirection-Button' onClick={handleAddItemClick}>
                     {title}
                 </button>
             )}

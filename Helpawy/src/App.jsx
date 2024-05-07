@@ -6,10 +6,10 @@ import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
 import LoginRedirect from './RedirectToLogin/LoginRedirect.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminPage from './LoginPage/AdminPage.jsx';
-import RequestCard from './RequestPost/RequestCard.jsx';
+
 
 // my User stories: 55, 56, 57, 58, 59, 66, 67, 68, 69, 70, 71, 72
-// the ones I finished: 55, 56, 57, 58, 59
+// the ones I finished: 55, 56, 57, 58, 59, 66
 
 //comment
 function App() {
@@ -20,10 +20,10 @@ function App() {
       <SchedulePicker />
       <ScheduleDropoff />
 
-      <RequestCard />
+      {/* <RequestCard /> */}
 
       <Router>
-        <RedirectionButton title="Add Item" />
+        <RedirectionButton title="New Post" />
       </Router>
       <Router>
         <LoginRedirect title="Log in as an admin" />

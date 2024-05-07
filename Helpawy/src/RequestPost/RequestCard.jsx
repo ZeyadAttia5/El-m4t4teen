@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { v4 as uuid } from 'uuid'
+// import { useHistory } from "react-router-dom";
 import { TextField, Select, MenuItem, Input, } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import './RequestCard.css'; // Import your custom CSS file
 
 const RequestCard = () => {
   const [selectedCategory, setSelectedCategory] = useState('Select a Category');
   const [requestPosted, setRequestPosted] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  let navigateTo = useNavigate();
   const [additionalFields, setAdditionalFields] = useState({
     season: 'default', // Set default value for season
     gender: 'default', // Set default value for gender
@@ -15,13 +20,13 @@ const RequestCard = () => {
   });
 
   const categories = [
-    'Select a Category',
-    'Clothes',
-    'Toys',
-    'Food',
-    'Medical Supplies',
-    'School Supplies',
-    'Blood Donations'
+    {category: 'Select a Category', id: uuid()},
+    {category: 'Clothes', id: uuid()},
+    {category: 'Toys', id: uuid()},
+    {category: 'Food', id: uuid()},
+    {category: 'Medical Supplies', id: uuid()},
+    {category: 'School Supplies', id: uuid()},
+    {category: 'Blood Donations', id: uuid()},
   ];
 
   const handleCategoryChange = (e) => {
@@ -313,7 +318,6 @@ const RequestCard = () => {
 
 
         );
-
       case 'School Supplies':
         return (
           <>
@@ -445,7 +449,7 @@ const RequestCard = () => {
             {/* hospital name, governorate, hospital area, hospital address, name of patient, blood type (including RH type) */}
             <TextField
               name='hospitalName'
-              placeholder='e.g. Cairo Hospital'
+              placeholder='e.g. Saudi German Hospital'
               type='text'
               className='additional-input'
               value={additionalFields.hospitalName || ''} // Set default value here
@@ -513,9 +517,20 @@ const RequestCard = () => {
     }
   };
 
+
+  useEffect(() => {
+    if (requestPosted) {
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+        navigateTo('/org-main-page');
+      }, 3000); // Adjust the delay time here (in milliseconds)
+    }
+  }, [requestPosted, navigateTo]);
+
   return (
     <div className="donation-request-card">
-      <h3>Donation Request</h3>
+      <h3>Donation Post Request</h3>
       <div className="category-dropdown">
         <Select
           className='dropdown-text'
@@ -523,14 +538,14 @@ const RequestCard = () => {
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
-          {categories.map((category, index) => (
-            <MenuItem key={index} value={category}>{category}</MenuItem>
+          {categories.map(category => (
+            <MenuItem key={category.id} value={category.category}>{category.category}</MenuItem>
           ))}
         </Select>
       </div>
       {renderAdditionalFields()}
       <button className='post-button' onClick={handlePostRequest}>Post Request</button>
-      {requestPosted && <p>Request posted</p>}
+      {showMessage && <p>Request posted</p>}
     </div>
   );
 };
