@@ -12,7 +12,7 @@ const CountDownTimerComponent = ({ timerKey, durationInSeconds, handleTimerCompl
         >
             {({ remainingTime }) => (
                 <div className="timer">
-                    <div className="text">&nbsp;The driver arrives after&nbsp;</div>
+                    <div className="text">&nbsp;Driver arrives after&nbsp;</div>
                     <div className="value">{formatTime(remainingTime)}</div>
                 </div>
             )}

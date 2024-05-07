@@ -1,19 +1,18 @@
 import { useState } from 'react';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './SchedulePicker.css';
 import CountDownTimerComponent from '../CountDownTimer/CountDownTimerComponent.jsx';
+import './SchedulePicker.css';
 
 
 const SchedulePicker = () => {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
-  const [showNotification, setShowNotification] = useState(false);
+  // const [showNotification, setShowNotification] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
 
   const handleSelectTimeSlot = (timeSlot) => {
     setSelectedTimeSlot(timeSlot);
-    setShowNotification(false); // Reset notification visibility
+    // setShowNotification(false); // Reset notification visibility
     setTimerKey((prevKey) => prevKey + 1); // Reset timer key to restart the countdown
   };
 
@@ -59,7 +58,7 @@ const SchedulePicker = () => {
   };
 
   const handleTimerCompletion = () => {
-    setShowNotification(true);
+    // setShowNotification(true);
     toast.success("The driver has arrived!", {
       position: 'top-right',
     });
