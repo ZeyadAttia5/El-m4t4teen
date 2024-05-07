@@ -1,0 +1,96 @@
+.blood-donation-component {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.blood-donation-component h1 {
+    margin-bottom: 20px;
+}
+
+.filter-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-options select {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #555; /* Darker gray for dropdown background */
+    color: #fff; /* White text */
+}
+
+.blood-request {
+    display: flex; /* Display blood request details in a row */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between items */
+    background-color: #555; /* Darker gray background for blood request */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.blood-request-details {
+    flex: 1; /* Take up remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #000; /* Dark gray background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 4px;
+}
+
+.button:hover {
+    background-color: #333; /* Darker gray on hover */
+    color: #fff; /* White text color */
+}
+
+.blood-donation-details {
+    background-color: #555; /* Darker gray background for blood donation details */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative; /* Position relative for absolute positioning */
+}
+
+.close-details-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-details-button:hover {
+    background-color: #333; /* Light gray on hover */
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.blood-drop-image {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Adjust the spacing between the title and the image */
+    margin-top: 25px;
+}
+
+.location-image {
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px; 
+}

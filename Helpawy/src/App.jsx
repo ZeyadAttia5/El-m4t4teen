@@ -8,16 +8,21 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 import BloodDonationComponent from './Med/BloodDonation.jsx'
 import MedDashboard from './Med/medDashboard.jsx'
+import React, { useState } from 'react';
 function App() {
 
-  // Mes points attribués: 72, 71, 70, 69, 68, 67, 66
-  // Les points finis: 55, 56, 57, 58, 59,
+  const [showBloodDonation, setShowBloodDonation] = useState(false);
 
   return (
     <>
-      <BloodDonationComponent/>
+      {showBloodDonation ? (
+        <BloodDonationComponent />
+      ) : (
+        <MedDashboard onBloodDonationClick={() => setShowBloodDonation(true)} />
+      )}
     </>
-  )
+  );
+  
 }
 
 export default App
