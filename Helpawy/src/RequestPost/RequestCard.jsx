@@ -383,7 +383,7 @@ const RequestCard = () => {
                 />
                 <TextField
                   name='quantity'
-                  placeholder='e.g. 1'
+                  placeholder='e.g. 5'
                   type='number'
                   className='additional-input'
                   value={additionalFields.quantity || ''} // Set default value here
@@ -442,13 +442,69 @@ const RequestCard = () => {
       case 'Blood Donations':
         return (
           <>
-            <Select
-              name='bloodGroup'
+            {/* hospital name, governorate, hospital area, hospital address, name of patient, blood type (including RH type) */}
+            <TextField
+              name='hospitalName'
+              placeholder='e.g. Cairo Hospital'
+              type='text'
               className='additional-input'
-              value={additionalFields.bloodGroup || 'default'} // Set default value here
+              value={additionalFields.hospitalName || ''} // Set default value here
               onChange={handleInputChange}
-              label="blood-group"
+              label='Hospital Name'
             />
+            <TextField
+              name='governorate'
+              placeholder='e.g. Cairo'
+              type='text'
+              className='additional-input'
+              value={additionalFields.governorate || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Governorate'
+            />
+            <TextField
+              name='hospitalArea'
+              placeholder='e.g. Nasr City'
+              type='text'
+              className='additional-input'
+              value={additionalFields.hospitalArea || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Hospital Area'
+            />
+            <TextField
+              name='hospitalAddress'
+              placeholder='e.g. 123 Street'
+              type='text'
+              className='additional-input'
+              value={additionalFields.hospitalAddress || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Hospital Address'
+            />
+            <TextField
+              name='patientName'
+              placeholder='e.g. Ahmed Ali'
+              type='text'
+              className='additional-input'
+              value={additionalFields.patientName || ''} // Set default value here
+              onChange={handleInputChange}
+              label='Patient Name'
+            />
+            <Select
+              name='bloodType'
+              className='additional-input'
+              value={additionalFields.bloodType || 'default'} // Set default value here
+              onChange={handleInputChange}
+              label="Blood Type"
+            >
+              <MenuItem value="default">Select Blood Type</MenuItem>
+              <MenuItem value="A+">A+</MenuItem>
+              <MenuItem value="A-">A-</MenuItem>
+              <MenuItem value="B+">B+</MenuItem>
+              <MenuItem value="B-">B-</MenuItem>
+              <MenuItem value="AB+">AB+</MenuItem>
+              <MenuItem value="AB-">AB-</MenuItem>
+              <MenuItem value="O+">O+</MenuItem>
+              <MenuItem value="O+">O-</MenuItem>
+            </Select>
           </>
         );
       // Add cases for other categories here
