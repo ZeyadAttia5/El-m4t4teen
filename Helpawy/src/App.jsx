@@ -6,7 +6,8 @@ import ScheduleDropoff from './ScheduleDropoff/ScheduleDropoff.jsx'
 import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
-
+import BloodDonationComponent from './Med/BloodDonation.jsx'
+import MedDashboard from './Med/medDashboard.jsx'
 function App() {
 
   // Mes points attribués: 72, 71, 70, 69, 68, 67, 66
@@ -14,12 +15,7 @@ function App() {
 
   return (
     <>
-      <TransportationPicker />
-      <SchedulePicker />
-      <ScheduleDropoff />
-      {/* <Router>
-        <RedirectionButton title="Add Item" />
-      </Router> */}
+      <BloodDonationComponent/>
     </>
   )
 }
