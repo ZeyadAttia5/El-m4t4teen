@@ -4,10 +4,10 @@ import SchedulePicker from './SchedulePicker/SchedulePicker.jsx'
 import ScheduleDropoff from './ScheduleDropoff/ScheduleDropoff.jsx'
 import ChooseItemTypePage from './ChooseItemTypePage/ChooseItemTypePage.jsx'; // Assuming you have a component for choosing item type
 import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
-import LoginRedirect from 'RedirectToLogin/LoginRedirect.jsx'
+import LoginRedirect from './RedirectToLogin/LoginRedirect.jsx'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
-import AdminPage from 'LoginPage/AdminPage';
-import RequestCard from 'RequestPost/RequestCard';
+import AdminPage from './LoginPage/AdminPage';
+import RequestCard from './RequestPost/RequestCard';
 
 //comment
 function App() {

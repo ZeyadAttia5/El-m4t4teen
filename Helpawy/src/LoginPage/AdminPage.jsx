@@ -1,10 +1,10 @@
 // AdminPage.jsx
 
 import React from 'react';
-import OrganizationView from 'OrganizationView/OrganizationView';
-import DonorView from 'DonorView/DonorView';
-import AcceptReject from 'AcceptReject/AcceptReject';
-import ViewRegButton from 'ViewRegOrg/ViewRegButton';
+import OrganizationView from '../OrganizationView/OrganizationView';
+import DonorView from '../DonorView/DonorView';
+import AcceptReject from '../AcceptReject/AcceptReject';
+import ViewRegButton from '../ViewRegOrg/ViewRegButton';
 
 const AdminPage = () => {
   return (
