@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './TransportationPicker.css'; // Import the CSS file for styling
 
 const TransportationPicker = ({ onSelectTransportation }) => {

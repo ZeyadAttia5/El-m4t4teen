@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const organizations = [
   { id: 1, name: 'Hospital 1', area: '5th Settlement', governorate: 'Cairo', type: 'Hospital' },
