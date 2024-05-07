@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
@@ -66,12 +66,12 @@ const MyForm = () => {
         {/* <InputLabel id="category-label">Category</InputLabel> */}
 
         <InputLabel
-        id="category-label"
-        type="category"
-        fullWidth
-        margin="normal"
-        className="form-field"
-      > Category</InputLabel>
+          id="category-label"
+          type="category"
+          fullWidth
+          margin="normal"
+          className="form-field"
+        > Category</InputLabel>
         <Select
           labelId="category-label"
           name="category"

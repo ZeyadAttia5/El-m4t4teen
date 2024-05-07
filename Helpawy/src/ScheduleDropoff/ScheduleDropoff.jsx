@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './ScheduleDropoff.css';
 const SchedulePicker = ({ onSelectTimeSlot }) => {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
