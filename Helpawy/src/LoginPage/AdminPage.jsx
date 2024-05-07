@@ -1,6 +1,9 @@
 // AdminPage.jsx
+<<<<<<< HEAD
 
 import React from 'react';
+=======
+>>>>>>> fd7e677993e442ea727a98011d6892f0aea75e75
 import OrganizationView from '../OrganizationView/OrganizationView';
 import DonorView from '../DonorView/DonorView';
 import AcceptReject from '../AcceptReject/AcceptReject';

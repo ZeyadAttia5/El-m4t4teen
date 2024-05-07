@@ -3,7 +3,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #000000;
+    background-color: black;
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -32,3 +32,5 @@
     flex-direction: column; /* Align time slots vertically */
     justify-content: space-between; /* Space items evenly */
   }
+
+  

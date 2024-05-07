@@ -1,49 +1,103 @@
 /* RequestCard.css */
 
+* {
+
+  font-family: Arial, sans-serif;
+
+}
+
 .donation-request-card {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(252, 251, 251, 0.1); /* Add a subtle shadow effect */
-  }
-  
-  h3 {
-    color: black;
-  }
-  
-  .category-dropdown {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-  }
-  
-  select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #575858;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #787878;
-  }
-  
-  p {
-    color: rgb(255, 0, 0);
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Use black for shadow */
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.category-dropdown {
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Adjust the border and placeholder behavior for all form fields */
+.MuiOutlinedInput-root {
+  border-radius: 5px;
+  /* Adjust the border radius as needed */
+  margin-bottom: 20px;
+  min-width: 300px;
+}
+
+/* Style the placeholder text */
+.MuiInputLabel-root.Mui-focused {
+  transform: translate(14px, -8px) scale(0.75);
+  background-color: white;
+  padding: 0 4px;
+}
+
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid gray; /*Use gray for border*/
+  border-radius: 5px;
+  background-color: white;
+}
+
+select {
+  padding: 20px;
+}
+
+/* Change border color for additional input fields to gray */
+.additional-input {
+  background-color: white;
+  border-color: gray;
+  color: black;
+}
+
+.dropdown-text {
+  color: black;
+}
+
+.post-button {
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 15px 0px;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+}
+
+.post-button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+.MuiButton-root:hover {
+  background-color: gray;
+  /* Use gray for hover effect */
+}
+
+
+p {
+  color: red;
+}
+

@@ -18,7 +18,9 @@
     "react-countdown-circle-timer": "^3.2.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "react-uuid": "^2.0.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
