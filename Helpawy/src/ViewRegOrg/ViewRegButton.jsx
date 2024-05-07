@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ViewRegOrg from './ViewRegOrg';
+import ViewRegOrg from 'ViewRegOrg/ViewRegOrg';
 const ViewRegButton = () => {
   const [showList, setShowList] = useState(false);
 

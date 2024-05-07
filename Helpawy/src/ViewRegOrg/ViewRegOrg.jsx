@@ -51,6 +51,19 @@ const ViewRegOrg = () => {
     setOrgList(orgList.filter(org => org.id !== id));
   };
 
+  const downloadPlaceholder = () => {
+    const placeholderContent = "Placeholder file content";
+    const blob = new Blob([placeholderContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'placeholder.txt';
+    document.body.appendChild(a);
+    a.click();
+    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  };
+
   return (
     <div>
       <input
@@ -86,6 +99,7 @@ const ViewRegOrg = () => {
           </li>
         ))}
       </ul>
+      <button onClick={downloadPlaceholder}>Download Placeholder</button>
     </div>
   );
 };
