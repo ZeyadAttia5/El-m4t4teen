@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
-import Login from 'LoginPage/Login.jsx';
+import Login from '../LoginPage/Login.jsx';
 import './LoginRedirect.css';
 
 const LoginRedirect = ({ title }) => {
