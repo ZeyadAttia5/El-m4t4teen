@@ -1,12 +1,12 @@
 import React from 'react';
 import './medDashboard.css'; // Importing the CSS file
 
-function MedDashboard({ onBloodDonationClick }) {
+function MedDashboard({ onBloodDonationClick, SuppliesClick }) {
   return (
     <div className="dashboard">
       <h1>Welcome to the Medical Donation Dashboard</h1>
       <div className="dashboard-options">
-        <div className="dashboard-option medical-supplies">
+        <div className="dashboard-option medical-supplies" onClick={SuppliesClick}>
           <h2>Medical Supplies</h2>
           <p>Donate medical supplies such as bandages, gloves, etc.</p>
         </div>
