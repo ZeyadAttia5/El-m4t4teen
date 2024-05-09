@@ -1,0 +1,54 @@
+.medical-cases-component {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .filter-options {
+    margin-bottom: 20px;
+  }
+  
+  .filter-options select {
+    margin-right: 10px; /* Adjust the right margin to space out the dropdowns */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .medical-cases-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .medical-case-item {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .medical-case-item:hover {
+    background-color: #555;
+  }
+  
+  .medical-case-details {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .close-details-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    float: right;
+    color: #aaa;
+  }
+  

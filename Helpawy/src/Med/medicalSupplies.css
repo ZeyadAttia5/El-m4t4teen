@@ -73,11 +73,7 @@
     color: #fff; /* White text */
 
   }
-  .medsupimage{
-    width: 300px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px;
-  }
+  
   .close-details-buttonSup {
     /* position: absolute; */
     background: none;
@@ -87,9 +83,4 @@
     font-size: 18px;
     cursor: pointer;
     float: right;
-}
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Optional: align items horizontally */
 }

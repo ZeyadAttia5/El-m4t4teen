@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './medicalSupplies.css';
 import ecgMachine from '../assets/ecg_machine.jpg';
 import ventilator from '../assets/ventilator.jpg';
+import diazepam from '../assets/diazepam.jpg';
+import actonel from "../assets/actonel.jpg";
+import Popup from './Popup';
 
 const medicalSuppliesData = [
   // Sample data for medical supplies donation requests
@@ -21,13 +24,30 @@ const medicalSuppliesData = [
     description: 'Advanced ICU ventilator with built-in oxygen concentrator.',
     image: ventilator, 
   },
+
+  {
+    id: 3,
+    type: 'Medication',
+    name: 'Diazepam',
+    quantity: 5,
+    description: 'Used to treat anxiety, seizures, alcohol withdrawal syndrome, and muscle spasms.',
+    image: diazepam, 
+  },
+
+  {
+    id: 4,
+    type: 'Medication',
+    name: 'Actonel',
+    quantity: 5,
+    description: 'Used in the prevention and treatment of osteoporosis.',
+    image: actonel, 
+  },
   // Add more sample data as needed
 ];
 
 function MedicalSuppliesComponent() {
   const [filterType, setFilterType] = useState('All'); // Initial filter type
   const [selectedRequest, setSelectedRequest] = useState(null); // For viewing details
-  const [donateAmount, setDonateAmount] = useState(0); // For tracking donation amount
   const [showPopup, setShowPopup] = useState(false); // For showing/hiding the popup
 
   // Function to handle filter option change
@@ -38,28 +58,19 @@ function MedicalSuppliesComponent() {
   // Function to handle click on "View Details" button
   const handleViewDetails = (request) => {
     setSelectedRequest(request);
+    setShowPopup(true);
   };
 
   // Function to close the view details component
   const handleCloseDetails = () => {
     setSelectedRequest(null);
-  };
-
-  // Function to handle donate now button click
-  const handleDonateNow = () => {
-    setShowPopup(true);
-  };
-
-  // Function to handle donation confirmation
-  const handleDonateConfirm = () => {
-    // Here you can handle the donation confirmation logic
     setShowPopup(false);
   };
 
-  // Function to handle donation amount change
-  const handleDonateAmountChange = (event) => {
-    const amount = parseInt(event.target.value);
-    setDonateAmount(amount);
+  // Function to handle donation
+  const handleDonate = () => {
+    // Handle donation logic here
+    handleCloseDetails();
   };
 
   return (
@@ -73,6 +84,7 @@ function MedicalSuppliesComponent() {
           <option value="Medical Device">Medical Device</option>
           <option value="Medical Equipment">Medical Equipment</option>
           <option value="Medication">Medication</option>
+          {/* Add more options as needed */}
         </select>
       </div>
 
@@ -90,41 +102,13 @@ function MedicalSuppliesComponent() {
           ))}
       </div>
 
-      {/* Display medical supplies details */}
-      {selectedRequest && (
-        <div className="medical-supplies-details">
-          <button className="button close-details-buttonSup" onClick={handleCloseDetails}>X</button>
-          <div className="medical-supplies-header">
-            <h2>Details of {selectedRequest.name}</h2>
-          </div>
-          <p>Type: {selectedRequest.type}</p>
-          <p>Quantity: {selectedRequest.quantity}</p>
-          <p>Description: {selectedRequest.description}</p>
-          <div className="image-container">
-            <img className="medsupimage" src={selectedRequest.image} alt={selectedRequest.name} />
-            <button className="button donateNow" onClick={handleDonateNow}>Donate Now</button>
-          </div>
-          {/* Add quantity selection component here */}
-        </div>
-      )}
-
-      {/* Donation Popup */}
+      {/* Popup */}
       {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <span className="close-popup" onClick={() => setShowPopup(false)}>&times;</span>
-            <h2>{selectedRequest.name}</h2>
-            <p>Quantity Needed: {selectedRequest.quantity}</p>
-            <input
-              type="number"
-              min="0"
-              max={selectedRequest.quantity}
-              value={donateAmount}
-              onChange={handleDonateAmountChange}
-            />
-            <button className="button" onClick={handleDonateConfirm}>Donate</button>
-          </div>
-        </div>
+        <Popup
+          selectedRequest={selectedRequest}
+          onClose={handleCloseDetails}
+          onDonate={handleDonate}
+        />
       )}
     </div>
   );
