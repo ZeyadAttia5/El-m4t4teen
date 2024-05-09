@@ -7,7 +7,7 @@ import LoginRedirect from './RedirectToLogin/LoginRedirect.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminPage from './LoginPage/AdminPage.jsx';
 import Navbar from './NavigationBar/NavBar'
-
+import PostCard from './PostCard/PostCard.jsx'
 
 // my User stories: 55, 56, 57, 58, 59, 66, 67, 68, 69, 70, 71, 72
 // the ones I finished: 55, 56, 57, 58, 59, 66
@@ -18,6 +18,8 @@ function App() {
   return (
     <>
       <Navbar />
+      <PostCard />
+
       {/* <TransportationPicker />
       <SchedulePicker />
       <ScheduleDropoff />
