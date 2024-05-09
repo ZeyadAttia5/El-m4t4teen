@@ -6,6 +6,7 @@ import RedirectionButton from './RedirectionButton/RedirectionButton.jsx'
 import LoginRedirect from './RedirectToLogin/LoginRedirect.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminPage from './LoginPage/AdminPage.jsx';
+import Navbar from './NavigationBar/NavBar'
 
 
 // my User stories: 55, 56, 57, 58, 59, 66, 67, 68, 69, 70, 71, 72
@@ -16,13 +17,14 @@ function App() {
 
   return (
     <>
-      <TransportationPicker />
+      <Navbar />
+      {/* <TransportationPicker />
       <SchedulePicker />
       <ScheduleDropoff />
 
       {/* <RequestCard /> */}
 
-      <Router>
+      {/* <Router>
         <RedirectionButton title="New Post" />
       </Router>
       <Router>
@@ -30,7 +32,8 @@ function App() {
         <Routes>
           <Route path="admin" element={<AdminPage />} />
         </Routes>
-      </Router>
+      </Router>  */}
+      
 
 
     </>
