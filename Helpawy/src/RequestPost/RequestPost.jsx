@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid'
 import { TextField, Select, MenuItem, Input, } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './RequestCard.css'; // Import your custom CSS file
+import './RequestPost.css'; // Import your custom CSS file
 
 const RequestCard = () => {
   const [selectedCategory, setSelectedCategory] = useState('Select a Category');
@@ -139,15 +139,15 @@ const RequestCard = () => {
             {/* Add more additional fields here */}
 
             {/* Input for quantity */}
-            <TextField
-              name='quantity'
-              placeholder='e.g. 1'
-              type='number'
-              className='additional-input'
-              value={additionalFields.quantity || ''} // Set default value here
-              onChange={handleInputChange}
-              label="Quantity"
-            />
+              <TextField
+                name='quantity'
+                placeholder='e.g. 1'
+                type='number'
+                className='additional-input'
+                value={additionalFields.quantity || ''} // Set default value here
+                onChange={handleInputChange}
+                label="Quantity"
+              />
           </>
         );
       case 'Toys':

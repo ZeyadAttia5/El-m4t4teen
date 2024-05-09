@@ -1,18 +1,21 @@
-import './medicalSupplies.css';
+import './PostCards.css';
 import { useState } from 'react';
 import ecgMachine from '../assets/ecg_machine.jpg';
 import ventilator from '../assets/ventilator.jpg';
 import diazepam from '../assets/diazepam.jpg';
 import actonel from "../assets/actonel.jpg";
-import Popup from './Popup';
+import Popup from '../Popup/Popup';
+// import PostCard from '../PostCard/PostCard';
+import Post from '../PostCard/postUserPrespective';
 
-const medicalSuppliesData = [
+const posts = [
   // Sample data for medical supplies donation requests
   {
     id: 1,
     type: 'Medical Device',
-    name: 'ECG Machine',
-    quantity: 3,
+    title: 'ECG Machine',
+    quantity_requested: 3,
+    quantity_fulfilled: 1,
     description: 'Portable ECG Machine with 12-lead monitoring capability.',
     image: ecgMachine,
     fulfilled: false,
@@ -20,36 +23,39 @@ const medicalSuppliesData = [
   {
     id: 2,
     type: 'Medical Equipment',
-    name: 'Ventilator',
-    quantity: 2,
+    title: 'Ventilator',
+    quantity_requested: 2,
+    quantity_fulfilled: 1,
     description: 'Advanced ICU ventilator with built-in oxygen concentrator.',
-    image: ventilator, 
+    image: ventilator,
     fulfilled: false,
   },
 
   {
     id: 3,
     type: 'Medication',
-    name: 'Diazepam',
-    quantity: 5,
+    title: 'Diazepam',
+    quantity_requested: 5,
+    quantity_fulfilled: 3,
     description: 'Used to treat anxiety, seizures, alcohol withdrawal syndrome, and muscle spasms.',
-    image: diazepam, 
+    image: diazepam,
     fulfilled: true,
   },
 
   {
     id: 4,
     type: 'Medication',
-    name: 'Actonel',
-    quantity: 5,
+    title: 'Actonel',
+    quantity_requested: 9,
+    quantity_fulfilled: 3,
     description: 'Used in the prevention and treatment of osteoporosis.',
-    image: actonel, 
+    image: actonel,
     fulfilled: true,
   },
   // Add more sample data as needed
 ];
 
-function MedicalSuppliesComponent() {
+function PostCards() {
   const [filterType, setFilterType] = useState('All'); // Initial filter type
   const [selectedRequest, setSelectedRequest] = useState(null); // For viewing details
   const [showPopup, setShowPopup] = useState(false); // For showing/hiding the popup
@@ -59,11 +65,11 @@ function MedicalSuppliesComponent() {
     setFilterType(event.target.value);
   };
 
-  // Function to handle click on "View Details" button
-  const handleViewDetails = (request) => {
-    setSelectedRequest(request);
-    setShowPopup(true);
-  };
+  //  Function to handle click on "View Details" button
+  // const handleViewDetails = (request) => {
+  //   setSelectedRequest(request);
+  //   setShowPopup(true);
+  // };
 
   // Function to close the view details component
   const handleCloseDetails = () => {
@@ -85,21 +91,18 @@ function MedicalSuppliesComponent() {
       <div className="filter-options">
         <select value={filterType} onChange={handleFilterChange}>
           <option value="All">All</option>
-          <option value="Fulfilled">Medical Device</option>
-          <option value="Not Fulfilled">Medical Equipment</option>
+          <option value="Fulfilled">Fulfilled</option>
+          <option value="Not Fulfilled">Not Fulfilled</option>
         </select>
       </div>
 
       {/* Display filtered medical supplies donation requests */}
       <div className="medical-supplies-list">
-        {medicalSuppliesData
+        {posts
           .filter((item) => filterType === 'All' || item.fulfilled === filterType)
           .map((request) => (
             <div key={request.id} className="medical-supplies-item">
-              <h2>{request.name}</h2>
-              <p>Type: {request.type}</p>
-              <p>Quantity: {request.quantity}</p>
-              <button className="button" onClick={() => handleViewDetails(request)}>View Details</button>
+              <Post post={request} />
             </div>
           ))}
       </div>
@@ -116,4 +119,4 @@ function MedicalSuppliesComponent() {
   );
 }
 
-export default MedicalSuppliesComponent;
+export default PostCards;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate, Route, Routes } from 'react-router-dom';
-import ChooseItemType from '../RequestPost/RequestCard.jsx';
+import ChooseItemType from '../RequestPost/RequestPost.jsx';
 
 import './RedirectionButton.css';
 

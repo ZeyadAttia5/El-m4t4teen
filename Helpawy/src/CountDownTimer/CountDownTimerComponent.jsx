@@ -1,5 +1,6 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import PropTypes from 'prop-types';
+import './CountDownTimer.css';
 
 const CountDownTimerComponent = ({ timerKey, durationInSeconds, handleTimerCompletion, formatTime }) => {
     return (
@@ -8,7 +9,10 @@ const CountDownTimerComponent = ({ timerKey, durationInSeconds, handleTimerCompl
             isPlaying
             duration={durationInSeconds}
             onComplete={handleTimerCompletion}
-            colors={[['#FF0000']]}
+            colors={[['#000000']]}
+            // colorsTime={[10, 5, 0]}
+            className="timer-wrapper"
+
         >
             {({ remainingTime }) => (
                 <div className="timer">

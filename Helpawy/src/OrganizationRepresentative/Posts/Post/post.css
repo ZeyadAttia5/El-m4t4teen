@@ -1,0 +1,57 @@
+.post-card {
+    background-color: black;
+    color: black;
+}
+
+.post-title {
+    color: black;
+}
+
+.post-card p{
+    color: black;
+}
+
+
+.post-quantity {
+    color: white;
+}
+
+.dialog-content {
+    background-color: white;
+    color: black;
+}
+
+.dialog-content p {
+    color: black;
+}
+
+.success-message {
+    color: green;
+}
+
+.details-button.MuiButton-contained {
+    background-color: black;
+}
+
+.details-button.MuiButton-contained:hover {
+    background-color: gray;
+}
+
+.form-fulfill-button.MuiButton-root {
+    background-color: black;
+    color: white;
+}
+
+.form-fulfill-button.MuiButton-root:hover {
+    background-color: gray;
+}
+
+.form-cancel-button.MuiButton-root {
+    background-color: red;
+    color: black;
+}
+
+.form-cancel-button.MuiButton-root:hover {
+    background-color: darkred;
+    color: black;
+}
