@@ -1,0 +1,56 @@
+.donors-list-container {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.donors-list-heading {
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+.donors-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.view-details-button{
+  color: #58a9ff;
+}
+
+.donors-table th,
+.donors-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.donors-table th {
+  background-color: #727272;
+  font-weight: bold;
+}
+
+.organization-select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.action-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
