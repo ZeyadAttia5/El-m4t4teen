@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Apply white color to all text */
+body {
+    color: white;
+  }
+  
+  /* Apply white color specifically to labels */
+  label {
+    color: white;
+  }
+  
+  /* Apply white color to input elements */
+  input {
+    color: white;
+  }
+  
+  /* Apply white color to buttons */
+  button {
+    color: white;
+  }
+  
+  /* Apply white color to h2 and h3 headings */
+  h2, h3 {
+    color: white;
+  }
+  
+  /* Align list text to the left */
+  ul {
+    text-align: left;
+  }
+  

@@ -1,20 +1,15 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
-<<<<<<< Updated upstream
-import Login from '../LoginPage/Login.jsx';
-=======
-import Login from 'C:/Users/Seif/Documents/GitHub/El-m4t4teen/Helpawy/src/LoginPage/Login.jsx';
->>>>>>> Stashed changes
-import './LoginRedirect.css';
+import DonorPage from './DonorPage';
 
-const LoginRedirect = ({ title }) => {
+const DonorVolunteerRedirect = ({ title }) => {
     const [buttonVisible, setButtonVisible] = useState(true);
 
     const navigateTo = useNavigate();
 
     const handleAddItemClick = () => {
-        navigateTo('login-redirect');
+        navigateTo('donorpage');
         setButtonVisible(false);
     };
 
@@ -27,14 +22,14 @@ const LoginRedirect = ({ title }) => {
             )}
             
             <Routes>
-                <Route path="/login-redirect" element={<Login />} />
+                <Route path="/donorpage" element={<DonorPage />} />
             </Routes>
         </div>
     );
 };
 
-LoginRedirect.propTypes = {
+DonorVolunteerRedirect.propTypes = {
     title: PropTypes.string.isRequired,
 };
 
-export default LoginRedirect;
+export default DonorVolunteerRedirect;
