@@ -1,13 +1,23 @@
-.post-card {
+/* .post-card {
     background-color: black;
     color: black;
+    border-radius: 10px;
+    flex-grow: 1;
+    position: relative; 
+
+}
+
+.post-card-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
 .post-title {
     color: black;
 }
 
-.post-card p{
+.post-card p {
     color: black;
 }
 
@@ -54,4 +64,41 @@
 .form-cancel-button.MuiButton-root:hover {
     background-color: darkred;
     color: black;
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 40px);
+    
+  }
+
+.post-image {
+    object-fit: cover;
+} */
+
+.cardRoot {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    /* background-color: black; */
+    flex-grow: 1;
+}
+
+
+.iconButton:hover {
+    background-color: gray;
+}
+
+.post-image {
+    object-fit: cover;
 }

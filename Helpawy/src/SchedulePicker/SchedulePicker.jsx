@@ -80,7 +80,7 @@ const SchedulePicker = () => {
             >
               {timeSlot}
             </div>
-        ))}
+          ))}
         </div>
         <CountDownTimerComponent timerKey={`${timerKey}`} durationInSeconds={timeSlotDuration(selectedTimeSlot)} handleTimerCompletion={handleTimerCompletion} formatTime={formatTime} />
       </div>
