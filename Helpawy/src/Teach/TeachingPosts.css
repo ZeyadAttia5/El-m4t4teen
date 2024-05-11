@@ -1,0 +1,50 @@
+/* TeacherList.css */
+
+.teacher-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .teacher-list-container h1 {
+    text-align: center;
+    color: #fdfdfd;
+  }
+  
+  .teacher-list-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  
+  .teacher-list-container input[type="text"]:focus {
+    outline: none;
+  }
+  
+  .teacher-list-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .teacher-list-container li {
+    margin-bottom: 10px;
+  }
+  
+  .teacher-link {
+    display: block;
+    text-decoration: none;
+    color: #060606;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .teacher-link:hover {
+    background-color: #555;
+    color: #fff;
+  }
+  

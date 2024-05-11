@@ -1,0 +1,171 @@
+/* TeacherForm.css */
+
+body {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.teacher-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.teacher-form-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.teacher-form-container .subject-selection {
+  margin-bottom: 20px;
+}
+
+.teacher-form-container .subject-selection label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.teacher-form-container .subject-selection input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Styling the list of subjects */
+.teacher-form-container .subject-selection label {
+  display: inline-block;
+  background-color: #555;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.teacher-form-container .subject-selection label:hover {
+  background-color: #777;
+}
+
+.teacher-form-container .schedule table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teacher-form-container .schedule th,
+.teacher-form-container .schedule td {
+  padding: 10px;
+  text-align: center;
+}
+
+.teacher-form-container .schedule th {
+  background-color: #555;
+}
+
+.teacher-form-container .schedule td {
+  background-color: #444;
+}
+
+.teacher-form-container .schedule td button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.teacher-form-container .schedule td button:hover {
+  background-color: #444;
+}
+
+.teacher-form-container #saveButton {
+  background-color: #555;
+}
+
+#saveButton {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#saveButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.teacher-form-container #saveButton:hover {
+  background-color: #666;
+}
+
+.teacher-form-container .saved-data {
+  margin-top: 20px;
+}
+
+.teacher-form-container .saved-data h3 {
+  margin-bottom: 10px;
+}
+
+.teacher-form-container .info {
+  margin-top: 20px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.modal p {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.modal ul {
+  margin-top: 0;
+  color: #fff;
+}
+
+.modal button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #555;
+}
