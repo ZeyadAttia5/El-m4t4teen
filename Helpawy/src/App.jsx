@@ -5,6 +5,7 @@ import MedicalSuppliesComponent from './Med/medicalSupplies.jsx';
 import BloodDonationComponent from './Med/BloodDonation.jsx';
 import MedicalCasesComponent from './Med/doctor.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './Med/HomePage.jsx';
 
 function App() {
   const [showBloodDonation, setShowBloodDonation] = useState(false);
@@ -13,13 +14,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MedDashboard />} />
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/MedDashboard" element={<MedDashboard />} />
         <Route path="/BloodDonation" element={<BloodDonationComponent />} />
         <Route path="/SuppliesDonation" element={<MedicalSuppliesComponent />} />
         <Route path="/MedicalCases" element={<MedicalCasesComponent />} />
       </Routes>
     </Router>
-
+    
+   
   );
 }
 
