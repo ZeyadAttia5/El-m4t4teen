@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
-<<<<<<< Updated upstream
-import Login from '../LoginPage/Login.jsx';
-=======
 import Login from 'C:/Users/Seif/Documents/GitHub/El-m4t4teen/Helpawy/src/LoginPage/Login.jsx';
->>>>>>> Stashed changes
 import './LoginRedirect.css';
 
 const LoginRedirect = ({ title }) => {

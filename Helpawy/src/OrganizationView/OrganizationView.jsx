@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './OrganizationView.css'
+import 'C:/Users/Seif/Documents/GitHub/El-m4t4teen/Helpawy/src/DonorPage/OrganizationView.css'
 
 const OrganizationView = () => {
   const organizations = ["Organization 1", "Organization 2", "Organization 3"];
