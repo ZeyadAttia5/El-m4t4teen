@@ -2,7 +2,7 @@
     padding: 20px;
     background-color: #333;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 8px;
   }
   
   .filter-options {
@@ -13,7 +13,7 @@
     margin-right: 10px; /* Adjust the right margin to space out the dropdowns */
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: #444;
     color: #fff;
   }
@@ -25,14 +25,14 @@
   }
   
   .medical-case-item {
-    background-color: #444;
+    background-color: #2196F3;
     padding: 15px;
     border-radius: 8px;
     cursor: pointer;
   }
   
   .medical-case-item:hover {
-    background-color: #555;
+    background-color: #7fc3f5; /* Lighter blue */
   }
   
   .medical-case-details {

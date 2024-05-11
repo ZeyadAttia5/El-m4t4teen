@@ -19,6 +19,7 @@ function App() {
         <Route path="/MedicalCases" element={<MedicalCasesComponent />} />
       </Routes>
     </Router>
+
   );
 }
 

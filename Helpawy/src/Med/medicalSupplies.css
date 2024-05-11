@@ -64,10 +64,15 @@
   }
   
   .medical-supplies-item {
-    background-color: #444; /* Dark gray background for each item */
+    background-color: #4CAF50; /* Dark gray background for each item */
     color: #fff; /* White text */
+    
   }
   
+  .medical-supplies-item:hover {
+    background-color: #6ebf72;
+    cursor: pointer;
+  }
   .medical-supplies-details {
     background-color: #444; /* Dark gray background for details */
     color: #fff; /* White text */

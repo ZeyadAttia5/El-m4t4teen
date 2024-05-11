@@ -28,8 +28,16 @@
     transition: background-color 0.3s ease;
   }
   
-  .dashboard-option:hover {
-    background-color: #555; /* Darker gray on hover */
+  .medical-supplies:hover {
+    background-color: #6ebf72; /* Lighter green */
+  }
+  
+  .blood-donation:hover {
+    background-color: #f67e7c; /* Lighter red */
+  }
+  
+  .doctor-visit:hover {
+    background-color: #7fc3f5; /* Lighter blue */
   }
   
   .medical-supplies {

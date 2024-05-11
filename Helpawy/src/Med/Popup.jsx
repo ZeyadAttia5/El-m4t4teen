@@ -1,7 +1,14 @@
 import React from 'react';
+import  { useState } from 'react';
 import './Popup.css';
 
 const Popup = ({ selectedRequest, onClose, onDonate }) => {
+  const [donatedAmount, setDonatedAmount] = useState(0);
+
+  const handleDonationChange = (event) => {
+    setDonatedAmount(parseInt(event.target.value));
+  };
+
   return (
     <div className="popup-overlay">
       <div className="popup-content">
@@ -13,10 +20,16 @@ const Popup = ({ selectedRequest, onClose, onDonate }) => {
             <p>Quantity: {selectedRequest.quantity}</p>
             <p>{selectedRequest.description}</p>
             <div className="lowerpart">
-            <img className='medsupimg' src={selectedRequest.image} alt={selectedRequest.name} />
-            <p>Enter the Quantity You Would like to Donate Below:</p>
-            <input type="number" min="0" max={selectedRequest.quantity} />
-            <button className="button donate" onClick={onDonate}>Donate</button>
+              <img className='medsupimg' src={selectedRequest.image} alt={selectedRequest.name} />
+              <p>Enter the Quantity You Would like to Donate Below:</p>
+              <input
+                type="number"
+                min="0"
+                max={selectedRequest.quantity}
+                value={donatedAmount}
+                onChange={handleDonationChange}
+              />
+              <button className="button donate" onClick={() => onDonate(donatedAmount)}>Donate</button>
             </div>
           </div>
         )}

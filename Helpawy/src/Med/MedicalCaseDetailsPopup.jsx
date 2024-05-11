@@ -6,7 +6,7 @@ const MedicalCaseDetailsPopup = ({ selectedCase, onClose, onFulfillCase }) => {
   return (
     <div className="overlay">
       <div className="popup">
-        <button className="close-details-button" onClick={onClose}>X</button>
+        <button className="CaseClose close-details-button" onClick={onClose}>X</button>
         <h2>{selectedCase.patientName}</h2>
         <p>Age: {selectedCase.age}, Gender: {selectedCase.gender}, Weight: {selectedCase.weight}</p>
         <p>Area: {selectedCase.area}</p>

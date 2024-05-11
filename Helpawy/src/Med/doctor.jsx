@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './doctor.css'; // Import CSS file
 import MedicalCaseDetailsPopup from "./MedicalCaseDetailsPopup.jsx";
+import AssignedPopup from "./AssignedPopup.jsx"; // Import the new popup component
 
 // Sample medical cases data
 const medicalCasesData = [
@@ -43,6 +44,7 @@ const MedicalCasesComponent = () => {
     governorate: '',
   });
   const [selectedCase, setSelectedCase] = useState(null);
+  const [showAssignedPopup, setShowAssignedPopup] = useState(false); // New state for the assigned popup
 
   // Function to handle changes in filter criteria
   const handleFilterChange = (event) => {
@@ -60,6 +62,13 @@ const MedicalCasesComponent = () => {
   const handleFulfillCase = (caseId) => {
     // Logic to fulfill the medical case
     console.log(`Fulfilling medical case with ID: ${caseId}`);
+
+    // Close the details popup and remove the case from the possible cases
+    setSelectedCase(null);
+    medicalCasesData.splice(medicalCasesData.findIndex((caseItem) => caseItem.id === caseId), 1);
+
+    // Show the assigned popup
+    setShowAssignedPopup(true);
   };
 
   // Extract unique values for medical specialty, organization, area, and governorate
@@ -127,6 +136,11 @@ const MedicalCasesComponent = () => {
           onClose={() => setSelectedCase(null)}
           onFulfillCase={handleFulfillCase}
         />
+      )}
+
+      {/* Display assigned popup */}
+      {showAssignedPopup && (
+        <AssignedPopup onClose={() => setShowAssignedPopup(false)} />
       )}
     </div>
   );

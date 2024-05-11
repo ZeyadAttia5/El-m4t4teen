@@ -13,9 +13,10 @@
   .popup {
     background-color: #222;
     padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative; /* Added position relative */
   }
   
   .close-details-button {
@@ -23,19 +24,11 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
-    background-color: #444;
-    position: absolute; /* Position the button */
-    top: 10px; /* Adjust top position */
-    right: 10px; /* Adjust right position */
+    color: #aaa;
+    float: right;
   }
   
-  .location-image {
-    width: 200px;
-    height: auto;
-    margin: 20px auto; /* Center the image horizontally */
-    display: block; /* Ensure the image is treated as a block element */
+  .close-details-button:hover {
+    color: #fff;
   }
   
-  .CaseClose{
-    background-color: #444;
-  }
