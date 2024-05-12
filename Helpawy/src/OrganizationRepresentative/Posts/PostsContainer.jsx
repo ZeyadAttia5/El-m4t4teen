@@ -1,12 +1,14 @@
 import { useState } from 'react';
 // import PropTypes from 'prop-types';
 import PostCard from './Post/post';
-import { Select, MenuItem, FormControl, InputLabel, Card, CardContent, CardMedia, List, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
+import { Select, MenuItem, FormControl, IconButton, InputLabel, Card, CardContent, CardMedia, List, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 import './postContainer.css';
 import ecgMachine from '../../assets/ecg_machine.jpg';
 import ventilator from '../../assets/ventilator.jpg';
 import diazepam from '../../assets/diazepam.jpg';
 import actonel from "../../assets/actonel.jpg";
+import AddIcon from '@mui/icons-material/Add';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -125,6 +127,7 @@ const PostsContainer = () => {
   const [filter, setFilter] = useState('all'); // Default filter is 'all'
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+  const navigate = useNavigate();
 
   const handleDelete = (id) => {
     const updatedPosts = posts.filter(post => post.id !== id);
@@ -149,6 +152,9 @@ const PostsContainer = () => {
     ));
   };
 
+  const handleAddPost = () => {
+    navigate('/OrgRepr/NewPost');
+  };
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
@@ -156,22 +162,32 @@ const PostsContainer = () => {
 
   const filteredPosts = filter === 'all' ? posts.flat() : posts.flat().filter(post => post.fulfilled === (filter === 'fulfilled'));
   return (
-    <div className="">
+    <div >
       <h2>List of Donation Requests</h2>
-      <FormControl variant="outlined" sx={{ minWidth: 120 }}>
-        <InputLabel id="filter-label">Filter by:</InputLabel>
-        <Select
-          labelId="filter-label"
-          id="filter"
-          value={filter}
-          onChange={handleFilterChange}
-          label="Filter by"
+      <div className='post-container-header'>
+        <FormControl variant="outlined" sx={{ minWidth: 120 }}>
+          <InputLabel id="filter-label">Filter by:</InputLabel>
+          <Select
+            labelId="filter-label"
+            id="filter"
+            value={filter}
+            onChange={handleFilterChange}
+            label="Filter by"
+          >
+            <MenuItem value="all">All</MenuItem>
+            <MenuItem value="fulfilled">Fulfilled</MenuItem>
+            <MenuItem value="unfulfilled">Unfulfilled</MenuItem>
+          </Select>
+        </FormControl>
+        <IconButton
+          onClick={handleAddPost}
+          // style={{ borderRadius: 0 }}
+          className='icon-button'
         >
-          <MenuItem value="all">All</MenuItem>
-          <MenuItem value="fulfilled">Fulfilled</MenuItem>
-          <MenuItem value="unfulfilled">Unfulfilled</MenuItem>
-        </Select>
-      </FormControl>
+          <AddIcon htmlColor='blue' />
+          <Typography color='text.primary'>New Post</Typography>
+        </IconButton>
+      </div>
       <List className="listContainer">
         {filteredPosts.map(post => (
           <PostCard

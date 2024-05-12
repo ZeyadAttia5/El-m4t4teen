@@ -102,6 +102,7 @@
     gap: 4px;
     border-radius: 10px;
 }
+
 .iconButton:hover {
     background-color: gray;
 }
@@ -124,6 +125,7 @@
     gap: 10px;
     grid-column: 1 / span 2;
 }
+
 .MUiCardContent-root {
     padding: 5px;
 }
@@ -179,4 +181,16 @@
     color: white;
     display: flex;
     gap: 4px;
+}
+
+.post-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.MuiIconButton-root.MuiButtonBase-root.icon-button {
+    border-radius: 5px;
 }

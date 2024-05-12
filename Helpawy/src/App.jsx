@@ -11,6 +11,7 @@ import SchedulePicker from './SchedulePicker/SchedulePicker.jsx';
 import TransportationPicker from './TransportationPicker/TransportationPicker.jsx';
 // import HomePage from './home/home.jsx';
 import OrgDashboard from './OrganizationRepresentative/OrgDashboard.jsx';
+import OrgNewPost from './OrganizationRepresentative/RequestPost/RequestPost.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css'
@@ -29,6 +30,8 @@ const App = () => {
                     <Route path="/OrgSendAppreciation" element={<OrgSendAppreciation />} />
                     <Route path='/DonateSchedPicker'element={<SchedulePicker/>}/>
                     <Route path='/DonateTransportPicker'element={<TransportationPicker/>}/>
+                    <Route path='/OrgRepr/NewPost'element={<OrgNewPost/>}/>
+
                 </Routes>
             </Router>
             {/* <TestList /> */}

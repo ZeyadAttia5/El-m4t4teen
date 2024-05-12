@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid'
-import { TextField, Select, MenuItem, Input, } from '@mui/material';
+import { TextField, Button, MenuItem, Input } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './RequestPost.css'; // Import your custom CSS file
 
 const RequestCard = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Select a Category');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [requestPosted, setRequestPosted] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   let navigateTo = useNavigate();
@@ -19,13 +19,12 @@ const RequestCard = () => {
   });
 
   const categories = [
-    {category: 'Select a Category', id: uuid()},
-    {category: 'Clothes', id: uuid()},
-    {category: 'Toys', id: uuid()},
-    {category: 'Food', id: uuid()},
-    {category: 'Medical Supplies', id: uuid()},
-    {category: 'School Supplies', id: uuid()},
-    {category: 'Blood Donations', id: uuid()},
+    { category: 'Clothes', id: uuid() },
+    { category: 'Toys', id: uuid() },
+    { category: 'Food', id: uuid() },
+    { category: 'Medical Supplies', id: uuid() },
+    { category: 'School Supplies', id: uuid() },
+    { category: 'Blood Donations', id: uuid() },
   ];
 
   const handleCategoryChange = (e) => {
@@ -47,173 +46,187 @@ const RequestCard = () => {
     setRequestPosted(true);
   };
 
+  const handleSubmit = (e) => {
+
+  }
+
   const renderAdditionalFields = () => {
     switch (selectedCategory) {
       case 'Clothes':
         return (
           <>
             {/* Dropdown menu for type */}
-            <Select
-              className='additional-input'
-              name='type'
-              value={additionalFields.type || 'default'} // Set default value here
+            <TextField
+              select
+              label="Type"
+              value={additionalFields.type}
               onChange={handleInputChange}
-              label="type"
+              required
             >
-              <MenuItem value="default">Select the Type of Clothing</MenuItem>
               <MenuItem value="shirt">Shirt</MenuItem>
               <MenuItem value="pants">Pants</MenuItem>
               <MenuItem value="hoodie">Hoodie</MenuItem>
               <MenuItem value="shoes">Shoes</MenuItem>
               <MenuItem value="socks">Socks</MenuItem>
-            </Select>
+
+            </TextField >
 
             {/* Dropdown menu for age */}
-            <Select
-              className='additional-input'
+            < TextField
+              select
               name='age'
-              value={additionalFields.age || 'default'} // Set default value here
+              value={additionalFields.age} // Set default value here
               onChange={handleInputChange}
-              label="age"
+              label="Age Group"
+              required
             >
-              <MenuItem value="default">Select the Age of Clothing</MenuItem>
-              <MenuItem value="kids">Kids</MenuItem>
-              <MenuItem value="adults">Adults</MenuItem>
-            </Select>
+              <MenuItem value="toddlers">0-3</MenuItem>
+              <MenuItem value="preschooler">3-6</MenuItem>
+              <MenuItem value="child">6-9</MenuItem>
+              <MenuItem value="preteen">9-12</MenuItem>
+              <MenuItem value="teens">12+</MenuItem>
+            </TextField >
 
             {/* Dropdown menu for gender */}
-            <Select
+            < TextField
+              select
               name='gender'
               className='additional-input'
-              value={additionalFields.gender || 'default'} // Set default value here
+              value={additionalFields.gender} // Set default value here
               onChange={handleInputChange}
-              label="gender"
+              label="Gender"
+              required
             >
-              <MenuItem value="default">Select Gender</MenuItem>
               <MenuItem value="male">Male</MenuItem>
               <MenuItem value="female">Female</MenuItem>
-            </Select>
+            </TextField >
+
+            {/* Dropdown menu for season */}
+            < TextField
+              select
+              name='season'
+              className='additional-input'
+              value={additionalFields.season} // Set default value here
+              onChange={handleInputChange}
+              label="season"
+              required
+            >
+              <MenuItem value="winter">Winter</MenuItem>
+              <MenuItem value="summer">Summer</MenuItem>
+            </TextField >
 
             {/* Dropdown menu for color */}
-            <Select
+            < TextField
+              select
               name='color'
               className='additional-input'
-              value={additionalFields.color || 'default'} // Set default value here
+              value={additionalFields.color} // Set default value here
               onChange={handleInputChange}
-              label="color"
+              label="Color"
             >
-              <MenuItem value="default">Select the Color</MenuItem>
               <MenuItem value="red">Red</MenuItem>
               <MenuItem value="khaki">Khaki</MenuItem>
               <MenuItem value="black">Black</MenuItem>
               <MenuItem value="cyan">Cyan</MenuItem>
-            </Select>
-
-            {/* Dropdown menu for season */}
-            <Select
-              name='season'
-              className='additional-input'
-              value={additionalFields.season || 'default'} // Set default value here
-              onChange={handleInputChange}
-              label="season"
-            >
-              <MenuItem value="default">Season</MenuItem>
-              <MenuItem value="winter">Winter</MenuItem>
-              <MenuItem value="summer">Summer</MenuItem>
-            </Select>
+            </TextField >
 
             {/* Dropdown menu for material */}
 
-            <Select
+            < TextField
+              select
               className='additional-input'
-              id="material"
-              value={additionalFields.material || 'default'}
+              name="material"
+              value={additionalFields.material}
               onChange={handleInputChange}
               label="material"
             >
-              <MenuItem value="default">Select the Material</MenuItem>
               <MenuItem value="cotton">Cotton</MenuItem>
               <MenuItem value="polyester">Polyester</MenuItem>
               <MenuItem value="silk">Silk</MenuItem>
-            </Select>
+            </TextField >
             {/* Add more additional fields here */}
 
             {/* Input for quantity */}
-              <TextField
-                name='quantity'
-                placeholder='e.g. 1'
-                type='number'
-                className='additional-input'
-                value={additionalFields.quantity || ''} // Set default value here
-                onChange={handleInputChange}
-                label="Quantity"
-              />
+            <TextField
+              name='quantity'
+              required
+              placeholder='e.g. 1'
+              type='number'
+              className='additional-input'
+              value={additionalFields.quantity || ''} // Set default value here
+              onChange={handleInputChange}
+              label="Quantity"
+            />
           </>
         );
       case 'Toys':
         return (
           <>
-            <Select
+            < TextField
+              select
+              required
               name="type"
               label="Type"
-              value={additionalFields.type || 'default'}
+              value={additionalFields.type}
               onChange={handleInputChange}
             >
-              <MenuItem value="default">Select the Type</MenuItem>
+
               <MenuItem value="educational">Educational</MenuItem>
               <MenuItem value="plush">Plush</MenuItem>
               <MenuItem value="electronic">Electronic</MenuItem>
-            </Select>
+            </TextField>
 
             {/* Dropdown menu for type */}
-            <Select
+            <TextField
+              select
               className='additional-input'
               name='category'
-              value={additionalFields.category || 'default'} // Set default value here
+              value={additionalFields.category} // Set default value here
               onChange={handleInputChange}
               label="category"
             >
-              <MenuItem value="default">Select the Category</MenuItem>
               <MenuItem value="board-games">Board Games</MenuItem>
               <MenuItem value="stuffed-toys">Stuffed Toys</MenuItem>
               <MenuItem value="dolls"> Dolls</MenuItem>
               <MenuItem value="sports">Sports</MenuItem>
               <MenuItem value="shoes">Cars</MenuItem>
               <MenuItem value="socks">Outdoor</MenuItem>
-            </Select>
+            </TextField>
 
             {/* Dropdown menu for age group*/}
-            <Select
+            <TextField
+              select
               className='additional-input'
               name='ageGroup'
-              value={additionalFields.ageGroup || 'default'} // Set default value here
+              value={additionalFields.ageGroup} // Set default value here
               onChange={handleInputChange}
-              label="age-group"
+              label="Age Group"
+              required
             >
-              <MenuItem value="default">Select the Age Group</MenuItem>
               <MenuItem value="toddlers">0-3</MenuItem>
               <MenuItem value="preschooler">3-6</MenuItem>
               <MenuItem value="child">6-9</MenuItem>
               <MenuItem value="preteen">9-12</MenuItem>
               <MenuItem value="teens">12+</MenuItem>
-            </Select>
+            </TextField>
 
             {/* Dropdown menu for gender */}
-            <Select
+            < TextField
+              select
               name='gender'
               className='additional-input'
-              value={additionalFields.gender || 'default'} // Set default value here
+              value={additionalFields.gender} // Set default value here
               onChange={handleInputChange}
               label="gender"
             >
-              <MenuItem value="default">Select Gender</MenuItem>
               <MenuItem value="boy">Boy</MenuItem>
               <MenuItem value="girl">Girl</MenuItem>
-            </Select>
+            </TextField>
 
             {/* Input for quantity */}
             <TextField
               name='quantity'
+              required
               placeholder='e.g. 1'
               type='number'
               className='additional-input'
@@ -234,6 +247,7 @@ const RequestCard = () => {
         return (
           <>
             <TextField
+              required
               name='name'
               placeholder='e.g. beans'
               type='text'
@@ -243,21 +257,23 @@ const RequestCard = () => {
               label="name"
             />
 
-            <Select
+            < TextField
+              required
+              select
               name='category'
               className='additional-input'
-              value={additionalFields.category || 'default'} // Set default value here
+              value={additionalFields.category} // Set default value here
               onChange={handleInputChange}
               label="category"
             >
-              <MenuItem value="default">Select a Category</MenuItem>
               <MenuItem value="fruitsAndVegetables">Fruits and Vegetables</MenuItem>
               <MenuItem value="cannedFoods">Canned Foods</MenuItem>
               <MenuItem value="freshMeals">Fresh Meals</MenuItem>
               <MenuItem value="bakedGoods">Baked Goods</MenuItem>
-            </Select>
+            </TextField>
 
             <TextField
+              required
               name='quantity'
               placeholder='e.g. 1'
               type='number'
@@ -271,34 +287,38 @@ const RequestCard = () => {
       case 'Medical Supplies':
         return (
           <>
-            <Select
+            < TextField
+              select
+              required
               name='type'
               className='additional-input'
-              value={additionalFields.type || 'default'} // Set default value here
+              value={additionalFields.type} // Set default value here
               onChange={handleInputChange}
               label="type"
             >
-              <MenuItem value="default">Select a Category</MenuItem>
               <MenuItem value="medicalDevices">Medical Devices</MenuItem>
               <MenuItem value="medicalEquipment">Medical Equipment</MenuItem>
               <MenuItem value="medication">Medication</MenuItem>
-            </Select>
-            <Select
+            </TextField>
+
+            < TextField
+              required
+              select
               name='usage'
               className='additional-input'
-              value={additionalFields.usage || 'default'} // Set default value here
+              value={additionalFields.usage} // Set default value here
               onChange={handleInputChange}
               label="Usage"
             >
-              <MenuItem value="default">Select the Usage</MenuItem>
               <MenuItem value="respiratorySupport">Respiratory Support</MenuItem>
               <MenuItem value="heartMonitoring">Heart Monitoring</MenuItem>
               <MenuItem value="diabetesManagement">Diabetes Management</MenuItem>
               <MenuItem value="surgicalInstruments">Surgical Instruments</MenuItem>
               <MenuItem value="imaging">Imaging</MenuItem>
               <MenuItem value="homeCare">Home Care</MenuItem>
-            </Select>
+            </TextField>
             <TextField
+              required
               name='quantity'
               placeholder='e.g. 1'
               type='number'
@@ -320,34 +340,37 @@ const RequestCard = () => {
       case 'School Supplies':
         return (
           <>
-            <Select
+            < TextField
+              required
+              select
               name='type'
               className='additional-input'
-              value={additionalFields.type || 'default'} // Set default value here
+              value={additionalFields.type} // Set default value here
               onChange={handleInputChange}
               label="type"
             >
-              <MenuItem value="default">Select a Category</MenuItem>
               <MenuItem value="stationary">Stationary</MenuItem>
               <MenuItem value="books">Books</MenuItem>
-              {/* <MenuItem value="bags">Bags</MenuItem>
-              <MenuItem value="uniforms">Uniforms</MenuItem>
+              {/* <MenuItem value="bags">Bags</MenuItem> */}
+              {/*<MenuItem value="uniforms">Uniforms</MenuItem>
               <MenuItem value="electronics">Electronics</MenuItem> */}
-            </Select>
+            </TextField>
 
             {/* show book name, author, language, edition, short summary of the book, a picture of the book and the quantity required */}
             {additionalFields.type === 'books' && (
               <>
                 <TextField
+                  required
                   name='title'
                   placeholder='e.g. Math Book'
-                  type='text'
+                  type='Subject'
                   className='additional-input'
                   value={additionalFields.title || ''} // Set default value here
                   onChange={handleInputChange}
                   label='Title'
                 />
                 <TextField
+                  required
                   name='author'
                   placeholder='e.g. Ehab Tawfik'
                   type='text'
@@ -357,6 +380,7 @@ const RequestCard = () => {
                   label='Author'
                 />
                 <TextField
+                  required
                   name='language'
                   placeholder='e.g. English'
                   type='text'
@@ -385,6 +409,7 @@ const RequestCard = () => {
                   label='Summary'
                 />
                 <TextField
+                  required
                   name='quantity'
                   placeholder='e.g. 5'
                   type='number'
@@ -403,14 +428,15 @@ const RequestCard = () => {
             )}
             {additionalFields.type === 'stationary' && (
               <>
-                <Select
+                < TextField
+                  required
+                  select
                   name='category'
                   className='additional-input'
-                  value={additionalFields.category || 'default'} // Set default value here
+                  value={additionalFields.category} // Set default value here
                   onChange={handleInputChange}
                   label="category"
                 >
-                  <MenuItem value="default">Select a Category</MenuItem>
                   <MenuItem value="pencils">Pencils</MenuItem>
                   <MenuItem value="pens">Pens</MenuItem>
                   <MenuItem value="notebooks">Notebooks</MenuItem>
@@ -419,8 +445,9 @@ const RequestCard = () => {
                   <MenuItem value="glue">Glue</MenuItem>
                   <MenuItem value="scissors">Scissors</MenuItem>
                   <MenuItem value="highlighters">Highlighters</MenuItem>
-                </Select>
+                </TextField>
                 <TextField
+                  required
                   name='quantity'
                   placeholder='e.g. 1'
                   type='number'
@@ -447,6 +474,7 @@ const RequestCard = () => {
           <>
             {/* hospital name, governorate, hospital area, hospital address, name of patient, blood type (including RH type) */}
             <TextField
+              required
               name='hospitalName'
               placeholder='e.g. Saudi German Hospital'
               type='text'
@@ -456,6 +484,7 @@ const RequestCard = () => {
               label='Hospital Name'
             />
             <TextField
+              required
               name='governorate'
               placeholder='e.g. Cairo'
               type='text'
@@ -465,15 +494,17 @@ const RequestCard = () => {
               label='Governorate'
             />
             <TextField
+              required
               name='hospitalArea'
               placeholder='e.g. Nasr City'
               type='text'
               className='additional-input'
               value={additionalFields.hospitalArea || ''} // Set default value here
               onChange={handleInputChange}
-              label='Hospital Area'
+              label='City/Area'
             />
             <TextField
+              required
               name='hospitalAddress'
               placeholder='e.g. 123 Street'
               type='text'
@@ -484,6 +515,7 @@ const RequestCard = () => {
             />
             <TextField
               name='patientName'
+              required
               placeholder='e.g. Ahmed Ali'
               type='text'
               className='additional-input'
@@ -491,14 +523,15 @@ const RequestCard = () => {
               onChange={handleInputChange}
               label='Patient Name'
             />
-            <Select
+            < TextField
+              required
+              select
               name='bloodType'
               className='additional-input'
-              value={additionalFields.bloodType || 'default'} // Set default value here
+              value={additionalFields.bloodType} // Set default value here
               onChange={handleInputChange}
               label="Blood Type"
             >
-              <MenuItem value="default">Select Blood Type</MenuItem>
               <MenuItem value="A+">A+</MenuItem>
               <MenuItem value="A-">A-</MenuItem>
               <MenuItem value="B+">B+</MenuItem>
@@ -507,7 +540,7 @@ const RequestCard = () => {
               <MenuItem value="AB-">AB-</MenuItem>
               <MenuItem value="O+">O+</MenuItem>
               <MenuItem value="O+">O-</MenuItem>
-            </Select>
+            </TextField>
           </>
         );
       // Add cases for other categories here
@@ -530,20 +563,25 @@ const RequestCard = () => {
   return (
     <div className="donation-request-card">
       <h3>Donation Post Request</h3>
-      <div className="category-dropdown">
-        <Select
-          className='dropdown-text'
-          id="category"
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-        >
-          {categories.map(category => (
-            <MenuItem key={category.id} value={category.category}>{category.category}</MenuItem>
-          ))}
-        </Select>
-      </div>
-      {renderAdditionalFields()}
-      <button className='post-button' onClick={handlePostRequest}>Post Request</button>
+      <form onSubmit={handlePostRequest} className='form-container'>
+        <div className="category-dropdown">
+          < TextField
+            required
+            select
+            className='dropdown-text'
+            id="category"
+            label="Category"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+          >
+            {categories.map(category => (
+              <MenuItem key={category.id} value={category.category}>{category.category}</MenuItem>
+            ))}
+          </TextField>
+        </div>
+        {renderAdditionalFields()}
+        <Button type="submit" className='post-button'>Post Request</Button>
+      </form>
       {showMessage && <p>Request posted</p>}
     </div>
   );

@@ -51,3 +51,14 @@
 .request-info {
   padding: 10px;
 }
+
+
+.MuiIconButton-root.MuiButtonBase-root.icon-button {
+    border-radius: 5px;
+}
+
+
+.MuiButtonBase-root:hover {
+    background-color: gray;
+    border-radius: 5px;
+}
