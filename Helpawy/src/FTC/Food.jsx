@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Food.css'; // Assuming you have a CSS file named foodDonations.css
 import FoodPopup from './FoodPopup';
+import Navbar from '../donorNavbar/NavBar.jsx'
 
 const FoodDonationComponent = () => {
   const [foodDonationRequests, setFoodDonationRequests] = useState([
@@ -69,43 +70,46 @@ const FoodDonationComponent = () => {
   });
 
   return (
-    <div className="food-donation-component">
-      <h1>Food Donation Requests</h1>
+    <>
+      <Navbar />
+      <div className="food-donation-component">
+        <h1>Food Donation Requests</h1>
 
-      {/* Filter options */}
-      <div className="filter-options">
-        <select value={filterType} onChange={handleFilterChange}>
-          <option value="All">All</option>
-          <option value="Canned foods">Canned foods</option>
-          <option value="Baked goods">Baked goods</option>
-          <option value="Fresh meals">Fresh meals</option>
-          <option value="Fruits and vegetables">Fruits and vegetables</option>
-        </select>
+        {/* Filter options */}
+        <div className="filter-options">
+          <select value={filterType} onChange={handleFilterChange}>
+            <option value="All">All</option>
+            <option value="Canned foods">Canned foods</option>
+            <option value="Baked goods">Baked goods</option>
+            <option value="Fresh meals">Fresh meals</option>
+            <option value="Fruits and vegetables">Fruits and vegetables</option>
+          </select>
+        </div>
+
+        {/* Display filtered food donation requests */}
+        <div className="food-donation-list">
+          {filteredRequests.map((request) => (
+            <div key={request.id} className="food-donation-item" onClick={() => handleViewDetails(request)}>
+              <h2>{request.recipient}</h2>
+              {request.items.map((item, index) => (
+                <div key={index}>
+                  <p>{item.name}: {item.quantity}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Popup */}
+        {showPopup && (
+          <FoodPopup
+            selectedRequest={selectedRequest}
+            onClose={handleCloseDetails}
+            onDonate={handleDonate}
+          />
+        )}
       </div>
-
-      {/* Display filtered food donation requests */}
-      <div className="food-donation-list">
-        {filteredRequests.map((request) => (
-          <div key={request.id} className="food-donation-item" onClick={() => handleViewDetails(request)}>
-            <h2>{request.recipient}</h2>
-            {request.items.map((item, index) => (
-              <div key={index}>
-                <p>{item.name}: {item.quantity}</p>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      {/* Popup */}
-      {showPopup && (
-        <FoodPopup
-          selectedRequest={selectedRequest}
-          onClose={handleCloseDetails}
-          onDonate={handleDonate}
-        />
-      )}
-    </div>
+    </>
   );
 }
 

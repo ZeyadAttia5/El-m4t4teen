@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Toys.css';
 import Popup from './Popup';
+import Navbar from '../donorNavbar/NavBar.jsx'
+
 
 const ToyDonationComponent = () => {
   const [toyData, setToyData] = useState([
@@ -67,60 +69,63 @@ const ToyDonationComponent = () => {
   };
 
   return (
-    <div className="toy-donation-component">
-      <h1>Toy Donation Requests</h1>
+    <>
+      <Navbar />
+      <div className="toy-donation-component">
+        <h1>Toy Donation Requests</h1>
 
-      <div className="filter-options">
-        {/* Age Filter */}
-        <select value={ageFilter} onChange={(e) => setAgeFilter(e.target.value)}>
-          <option value="All">All Ages</option>
-          <option value="0-2 years">0-2 years</option>
-          <option value="3-5 years">3-5 years</option>
-          <option value="6-10 years">6-10 years</option>
-          {/* Add more age ranges as needed */}
-        </select>
+        <div className="filter-options">
+          {/* Age Filter */}
+          <select value={ageFilter} onChange={(e) => setAgeFilter(e.target.value)}>
+            <option value="All">All Ages</option>
+            <option value="0-2 years">0-2 years</option>
+            <option value="3-5 years">3-5 years</option>
+            <option value="6-10 years">6-10 years</option>
+            {/* Add more age ranges as needed */}
+          </select>
 
-        {/* Gender Filter */}
-        <select value={genderFilter} onChange={(e) => setGenderFilter(e.target.value)}>
-          <option value="All">All Genders</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Unisex">Unisex</option>
-        </select>
+          {/* Gender Filter */}
+          <select value={genderFilter} onChange={(e) => setGenderFilter(e.target.value)}>
+            <option value="All">All Genders</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+          </select>
 
-        {/* Category Filter */}
-        <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
-          <option value="All">All Categories</option>
-          <option value="board games">Board Games</option>
-          <option value="stuffed toys">Stuffed Toys</option>
-          {/* Add more categories as needed */}
-        </select>
+          {/* Category Filter */}
+          <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+            <option value="All">All Categories</option>
+            <option value="board games">Board Games</option>
+            <option value="stuffed toys">Stuffed Toys</option>
+            {/* Add more categories as needed */}
+          </select>
+        </div>
+
+        <div className="toy-list">
+          {toyData
+            .filter(toy => (ageFilter === 'All' || toy.ageRange === ageFilter) &&
+              (genderFilter === 'All' || toy.gender === genderFilter) &&
+              (categoryFilter === 'All' || toy.category === categoryFilter))
+            .map((toy) => (
+              <div key={toy.id} className="toy-item" onClick={() => handleViewDetails(toy)}>
+                <h2>{toy.recipient}</h2>
+                <p>Age Range: {toy.ageRange}</p>
+                <p>Preferences: {toy.preferences}</p>
+                <p>Quantity: {toy.quantity}</p>
+                <p>Gender: {toy.gender}</p>
+              </div>
+            ))}
+        </div>
+
+        {showPopup && (
+          <Popup
+            selectedItem={selectedToy}
+            onClose={handleCloseDetails}
+            onDonate={handleDonate}
+          />
+        )}
       </div>
-
-      <div className="toy-list">
-        {toyData
-          .filter(toy => (ageFilter === 'All' || toy.ageRange === ageFilter) && 
-                         (genderFilter === 'All' || toy.gender === genderFilter) &&
-                         (categoryFilter === 'All' || toy.category === categoryFilter))
-          .map((toy) => (
-            <div key={toy.id} className="toy-item" onClick={() => handleViewDetails(toy)}>
-              <h2>{toy.recipient}</h2>
-              <p>Age Range: {toy.ageRange}</p>
-              <p>Preferences: {toy.preferences}</p>
-              <p>Quantity: {toy.quantity}</p>
-              <p>Gender: {toy.gender}</p>
-            </div>
-          ))}
-      </div>
-
-      {showPopup && (
-        <Popup
-          selectedItem={selectedToy}
-          onClose={handleCloseDetails}
-          onDonate={handleDonate}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
