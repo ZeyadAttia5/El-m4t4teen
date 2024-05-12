@@ -1,21 +1,26 @@
 import { useState } from 'react';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CountDownTimerComponent from '../CountDownTimer/CountDownTimerComponent';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 import './SchedulePicker.css';
-import CountDownTimerComponent from '../CountDownTimer/CountDownTimerComponent.jsx';
 
 
 const SchedulePicker = () => {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
-  const [showNotification, setShowNotification] = useState(false);
+  // const [showNotification, setShowNotification] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
-
+  const navigate = useNavigate();
   const handleSelectTimeSlot = (timeSlot) => {
     setSelectedTimeSlot(timeSlot);
-    setShowNotification(false); // Reset notification visibility
+    // setShowNotification(false); // Reset notification visibility
     setTimerKey((prevKey) => prevKey + 1); // Reset timer key to restart the countdown
   };
+
+  const handleConfirmBtn = () => {
+    navigate('/DonateTransportPicker');
+  }
 
 
   const timeSlots = ['Tomorrow Morning (9am - 12pm)', 'Tomorrow Afternoon (12pm - 3pm)', 'Tomorrow Evening (3pm - 6pm)'];
@@ -59,7 +64,7 @@ const SchedulePicker = () => {
   };
 
   const handleTimerCompletion = () => {
-    setShowNotification(true);
+    // setShowNotification(true);
     toast.success("The driver has arrived!", {
       position: 'top-right',
     });
@@ -81,7 +86,10 @@ const SchedulePicker = () => {
             >
               {timeSlot}
             </div>
-        ))}
+          ))}
+          <div className='confirm-btn-container'>
+            <Button className='confirm-btn' onClick={handleConfirmBtn}>Confirm</Button>
+          </div>
         </div>
         <CountDownTimerComponent timerKey={`${timerKey}`} durationInSeconds={timeSlotDuration(selectedTimeSlot)} handleTimerCompletion={handleTimerCompletion} formatTime={formatTime} />
       </div>

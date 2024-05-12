@@ -17,6 +17,10 @@ const handleLogoutClick = () => {
   window.location.href='/';
 }
 
+const handleClick = () => {
+  window.location.href='/organization1';
+}
+
 function AdminDashboard() {
   return (
     <div className="dashboard">
@@ -40,7 +44,7 @@ function AdminDashboard() {
           <h2>Organizations List</h2>
           <p className='p'>View a list of all organizations requesting to use the application.</p>
         </div>
-        <div className="dashboard-option doctor-visit" >
+        <div className="dashboard-option doctor-visit" onClick={handleClick} >
           <h2>View Registered Organizations</h2>
           <p className='p'>View a list of all the organizations registered on the system.</p>
         </div>

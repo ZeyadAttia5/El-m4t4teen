@@ -1,0 +1,196 @@
+/* .post-card {
+    background-color: black;
+    color: black;
+    border-radius: 10px;
+    flex-grow: 1;
+    position: relative; 
+
+}
+
+.post-card-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.post-title {
+    color: black;
+}
+
+.post-card p {
+    color: black;
+}
+
+
+.post-quantity {
+    color: white;
+}
+
+.dialog-content {
+    background-color: white;
+    color: black;
+}
+
+.dialog-content p {
+    color: black;
+}
+
+.success-message {
+    color: green;
+}
+
+.details-button.MuiButton-contained {
+    background-color: black;
+}
+
+.details-button.MuiButton-contained:hover {
+    background-color: gray;
+}
+
+.form-fulfill-button.MuiButton-root {
+    background-color: black;
+    color: white;
+}
+
+.form-fulfill-button.MuiButton-root:hover {
+    background-color: gray;
+}
+
+.form-cancel-button.MuiButton-root {
+    background-color: red;
+    color: black;
+}
+
+.form-cancel-button.MuiButton-root:hover {
+    background-color: darkred;
+    color: black;
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 40px);
+    
+  }
+
+.post-image {
+    object-fit: cover;
+} */
+
+.cardRoot {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    justify-content: space-between;
+    /* background-color: black; */
+    flex-grow: 1;
+}
+
+.iconButton {
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 4px;
+    border-radius: 10px;
+}
+
+.iconButton:hover {
+    background-color: gray;
+}
+
+.post-image {
+    object-fit: cover;
+}
+
+.top-Bar-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    grid-column: 1 / span 2;
+}
+
+.MUiCardContent-root {
+    padding: 5px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 10px; */
+    padding: 0%;
+}
+
+.post-info {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.post-info p {
+    margin: 1px;
+    padding: 0px;
+}
+
+.post-description.MuiTypography-root {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 0 20px 10px 20px;
+    font-size: 20px;
+}
+
+.post-status {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.post-title {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.post-controls {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-button {
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 4px;
+}
+
+.post-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.MuiIconButton-root.MuiButtonBase-root.icon-button {
+    border-radius: 5px;
+}

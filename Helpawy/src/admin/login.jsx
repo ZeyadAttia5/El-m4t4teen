@@ -44,9 +44,9 @@ const handleClinicMapClick = (e) => {
     } else if (email === 'donor@example.com' && password === 'donor123') {
       // Redirect to the user dashboard if email and password are correct
       window.location.href = '/HomePage';
-    } else if(email === 'organiztion@example.com' && password === 'organiztion123'){
+    } else if(email === 'organiztion@example.com' && password === 'org123'){
       // Display error message for incorrect credentials
-      window.location.href = '/OrgDashboard';
+      window.location.href = '/OrgDashBoard';
     }else{
       alert('Invalid email or password');
     }

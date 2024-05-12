@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import './TransportationPicker.css'; // Import the CSS file for styling
 
-const TransportationPicker = ({ onSelectTransportation }) => {
+const TransportationPicker = () => {
   const [selectedTransportation, setSelectedTransportation] = useState('');
 
   const handleSelectTransportation = (transportation) => {
     setSelectedTransportation(transportation);
-    onSelectTransportation(transportation);
   };
+
+  const navigate = useNavigate();
+  const handleConfirmBtn = () => {
+    navigate('/Homepage');
+  }
 
   return (
     <div className="transportation-container">
@@ -31,6 +37,9 @@ const TransportationPicker = ({ onSelectTransportation }) => {
         >
           Motorcycle
         </div>
+        <div className='confirm-btn-container'>
+            <Button className='confirm-btn' onClick={handleConfirmBtn}>Confirm</Button>
+          </div>
       </div>
     </div>
   );

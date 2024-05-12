@@ -1,34 +1,54 @@
 .time-slot {
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #000000;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  
-  .time-slot:hover {
-    background-color: gray;
-  }
-  
-  .time-slot.selected {
-    background-color: gray;
-  }
-  
-  .time-slot {
-    margin-right: 20px;
-  }
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: black;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+}
 
-  .schedule-picker-container {
-    display: flex;
-    flex-direction: row; /* Align items horizontally */
-    justify-content: space-between; /* Space items evenly */
-    gap: 20px; /* Add spacing between items */
-  }
 
-  .time-slots-container {
-    display: flex;
-    flex-direction: column; /* Align time slots vertically */
-    justify-content: space-between; /* Space items evenly */
-  }
+.time-slot:hover {
+  background-color: gray;
+}
+
+.time-slot.selected {
+  background-color: gray;
+}
+
+
+.schedule-picker-container {
+  display: flex;
+  flex-direction: row;
+  /* Align items horizontally */
+  justify-content: space-between;
+  /* Space items evenly */
+  gap: 20px;
+  /* Add spacing between items */
+}
+
+.time-slots-container {
+  display: flex;
+  flex-direction: column;
+  /* Align time slots vertically */
+  justify-content: space-between;
+  /* Space items evenly */
+}
+
+.confirm-btn.MuiButton-root {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+.confirm-btn.MuiButton-root:hover {
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+}
+
+.confirm-btn-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
