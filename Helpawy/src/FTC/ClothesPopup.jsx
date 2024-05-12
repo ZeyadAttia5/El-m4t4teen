@@ -36,7 +36,7 @@ const ClothesPopup = ({ selectedRequest, onClose, onDonate }) => {
                 value={donatedQuantity}
                 onChange={handleQuantityChange}
               />
-              <button className="donate-button" onClick={() => {onDonate(donatedQuantity); handleDonate}}>Donate</button>
+              <button className="donate-button" onClick={() => {onDonate(donatedQuantity); handleDonate()}}>Donate</button>
             </div>
           </div>
         )}
