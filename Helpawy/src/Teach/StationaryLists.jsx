@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TeachingPosts.css';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const teachers = [
   { id: 1, name: 'Physics Books'},
   { id: 2, name: 'Math Books' },
@@ -28,7 +29,8 @@ const StationaryLists = () => {
 
   return (
     <div className="teacher-list-container">
-      <h1>Stationary Items</h1>
+      <h1 className="heading">
+      <Link to="/teacher-dashboard" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> Stationary Items </h1>
       <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by name" />
       <ul>
         {filteredTeachers.map(item => (

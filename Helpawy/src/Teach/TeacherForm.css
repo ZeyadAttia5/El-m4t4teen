@@ -20,13 +20,20 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
+link
+{
+  color: white;
+}
 .teacher-form-container h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: white;
 }
 
+#LinkArrow
+{
+  color: white;
+}
 .teacher-form-container .subject-selection {
   margin-bottom: 20px;
 }

@@ -1,8 +1,9 @@
 // BookSelection.js
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './BookSelection.css';
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const books = [
   { id: 1, name: 'Physics Book', author: 'John Doe', edition: '2nd Edition', summary: 'A comprehensive guide to physics.' },
@@ -15,7 +16,8 @@ const books = [
 const BookSelection = () => {
   return (
     <div className="books-container">
-      <h1>Books</h1>
+      <h1 className="heading">
+      <Link to="/teacher-dashboard" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> Books </h1>
       <ul className="books-list">
         {books.map(book => (
           <li key={book.id}>

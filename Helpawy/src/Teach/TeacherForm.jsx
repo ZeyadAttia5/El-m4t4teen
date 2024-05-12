@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './TeacherForm.css';
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const TeacherForm = () => {
   const subjects = ["Math", "English", "Computer"];
@@ -61,7 +63,8 @@ const TeacherForm = () => {
 
   return (
     <div className="teacher-form-container">
-      <h2>Teacher Form</h2>
+      <h2 className="heading">
+      <Link to="/teacher-dashboard" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> Teacher Form </h2>
       
       <div className="subject-selection">
         <label>Select Subjects:</label>

@@ -15,6 +15,10 @@ body
     color: #ffffff;
   }
   
+  #LinkArrow
+  {
+    color: white;
+  }
   .books-list {
     list-style-type: none;
     padding: 0;

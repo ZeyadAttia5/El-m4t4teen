@@ -19,6 +19,10 @@
     border-radius: 5px;
   }
   
+  #LinkArrow
+  {
+    color: white;
+  }
   .teacher-list-container input[type="text"]:focus {
     outline: none;
   }

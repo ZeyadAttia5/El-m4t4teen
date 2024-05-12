@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TeachingPosts.css';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const teachers = [
   { id: 1, name: 'Math Teacher', subject: 'Math', teachingAreas: 'Madinaty', governorate: 'Cairo' },
   { id: 2, name: 'English Teacher', subject: 'English', teachingAreas: 'Sheikh Zayed', governorate: 'Giza' },
@@ -30,7 +31,8 @@ const TeachingPosts = () => {
 
   return (
     <div className="teacher-list-container">
-      <h1>Teachers</h1>
+      <h1 className="heading">
+      <Link to="/teacher-dashboard" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> Teachers </h1>
       <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by subject, area, or governorate" />
       <ul>
         {filteredTeachers.map(teacher => (
