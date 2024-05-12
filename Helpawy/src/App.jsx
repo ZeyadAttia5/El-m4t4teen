@@ -13,6 +13,7 @@ import TransportationPicker from './TransportationPicker/TransportationPicker.js
 import OrgDashboard from './OrganizationRepresentative/OrgDashboard.jsx';
 import OrgNewPost from './OrganizationRepresentative/RequestPost/RequestPost.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RequestView from './RequestView/RequestView.jsx';
 
 import './App.css'
 
@@ -22,6 +23,7 @@ const App = () => {
         <>
             <Router>
                 <Navbar />
+                <RequestView/>
                 <Routes>
                     <Route path="/" element={<OrgDashboard />} />
                     <Route path="/profile" element={<Profile />} />
