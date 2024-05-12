@@ -12,6 +12,12 @@ body {
   min-height: 100vh;
 }
 
+::placeholder {
+  /* Change the color to your desired color */
+  color: #999;
+  /* You can also adjust other properties like font-size, font-weight, etc. here */
+}
+
 .background {
   background-color: #000;
   flex: 1;
