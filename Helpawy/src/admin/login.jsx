@@ -15,6 +15,24 @@ const LoginPage = () => {
   const [uploadedFileName, setUploadedFileName] = useState(null);
   const [markerPosition, setMarkerPosition] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [specialization, setSpecialization] = useState('');
+const [doctorDocument, setDoctorDocument] = useState(null);
+const [clinicMarkerPosition, setClinicMarkerPosition] = useState(null);
+
+const handleSpecializationChange = (e) => {
+  setSpecialization(e.target.value);
+};
+
+const handleDoctorDocumentUpload = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setDoctorDocument(file.name);
+  }
+};
+
+const handleClinicMapClick = (e) => {
+  setClinicMarkerPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+};
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -203,22 +221,63 @@ const LoginPage = () => {
           </>
         )}
         {(!registrationMode && DonorregistrationMode) && (
-          <>
-            <input type="text" placeholder="First Name*" required />
-            <input type="text" placeholder="Last Name*" required />
-            <select className='organization-selectt' required>
-              <option value="">Select Gender*</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-            <input type="email" placeholder="Email*" required />
-            <input type="password" placeholder="Password*" required />
-            <input type="number" placeholder="Contact Number*" required />
-            <input type="text" placeholder="Address*" required />
-            <input type="text" placeholder="Area*" required />
-            <input type="text" placeholder="Governorate*" required />
-          </>
-        )}
+  <>
+    <input type="text" placeholder="First Name*" required />
+    <input type="text" placeholder="Last Name*" required />
+    <select className='organization-selectt' required>
+      <option value="">Select Gender*</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input type="email" placeholder="Email*" required />
+    <input type="password" placeholder="Password*" required />
+    <input type="number" placeholder="Contact Number*" required />
+    <input type="text" placeholder="Address*" required />
+    <input type="text" placeholder="Area*" required />
+    <input type="text" placeholder="Governorate*" required />
+    <select className='organization-selectt' onChange={handleSpecializationChange} required>
+      <option value="">Specialization*</option>
+      <option value="regular">Regular Donor</option>
+      <option value="teacher">Teacher</option>
+      <option value="doctor">Doctor</option>
+    </select>
+    {specialization === "doctor" && (
+      <>
+        <div className="upload-document">
+          <label htmlFor="document-upload" className="upload-button">
+            <span>{doctorDocument || 'Upload Doctor Document'}</span>
+            <input type="file" id="document-upload" accept=".pdf,.doc,.docx" onChange={handleDoctorDocumentUpload}/>
+          </label>
+        </div>
+        <input type="text" placeholder="Clinic Location*" required />
+        <input type="text" placeholder="Clinic Area*" required />
+        <input type="text" placeholder="Clinic Governorate*" required />
+        <LoadScript
+          googleMapsApiKey="AIzaSyAdzaGmL_O_WXhUqyDe-EPm9qp6f2iHrek"
+          libraries={['places']}
+        >
+          <GoogleMap
+            mapContainerStyle={{ height: '250px', width: '100%' }}
+            zoom={15}
+            center={{ lat: 29.9861175, lng: 31.4394402 }}
+            onClick={handleClinicMapClick}
+          >
+            {clinicMarkerPosition && <Marker position={clinicMarkerPosition} />} 
+          </GoogleMap>
+        </LoadScript>
+        <input type="text" placeholder="Specialty*" required />
+        <input type="number" placeholder="Pro-bono Cases*" required />
+      </>
+    )}
+    {specialization === "teacher" && (
+      <>
+        <input type="text" placeholder="Subjects Taught*" required />
+        <input type="number" placeholder="Pro-bono Classes*" required />
+      </>
+    )}
+  </>
+)}
+
         {!registrationMode && !DonorregistrationMode && (
           <>
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
