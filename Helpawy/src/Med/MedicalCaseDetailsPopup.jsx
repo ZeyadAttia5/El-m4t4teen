@@ -1,7 +1,7 @@
 import React from 'react';
 import './MedicalCaseDetailsPopup.css'; // Import CSS file
 import { GoogleMap,Marker, LoadScript } from '@react-google-maps/api';
-
+MedicalCaseDetailsPopup.css
 const MedicalCaseDetailsPopup = ({ selectedCase, onClose, onFulfillCase }) => {
 
   const mapStyles = {
