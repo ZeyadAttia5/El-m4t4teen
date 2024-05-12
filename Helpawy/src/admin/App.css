@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  background-color: #000;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.background {
+  background-color: #000;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form text {
+  font-size: 2.5rem;
+  margin-top: 2000px;
+  color: #000000;
+}
+.error-text {
+  color: red;
+}
+
+
+.login-form {
+  max-width: 600px;
+  margin: 50px auto;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.login-form button {
+  width: 100%;
+  /* padding: 10px; */
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.organization-selectt {
+  margin-right: 10px;
+  width: 98.8%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  color: #333;
+  color: #929292;
+  background-color: #3a3a3a;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.search-box button:hover {
+  background-color: #0056b3;
+}
+
+
+.organization-select:focus {
+  outline: none;
+  border-color: #008CBA;
+}
+
+.button-group {
+  margin-top: 20px;
+margin-right: 60px;
+margin-left: 60px;
+  display: flex;
+  justify-content: center;
+}
+.upload-document {
+  margin-bottom: 20px;
+}
+
+.upload-instruction {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-button span {
+  margin-right: 10px;
+}
+
+.upload-button input[type="file"] {
+  display: none;
+}
+
+
+.button2 {
+  width: 10%;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  /* margin-top: 10px; */
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.h2 {
+  font-size: 2rem;
+  padding-right: 50px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+p {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+.login-button-text {
+  color: #000000;
+}
+
+.login-button:hover {
+  background-color: #000000;
+}
+
+.forgot-password {
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.signup-link {
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.signup-link a {
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.signup-link a:hover {
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+}

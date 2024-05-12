@@ -16,7 +16,7 @@ const HomePage = () => {
   };
 
   const handleTeachingMaterialDonationClick = () => {
-    // Handle navigation or other actions related to teaching material donation
+    navigate('/Teaching');
   };
 
   const handleFoodDonationClick = () => {
@@ -45,7 +45,7 @@ const HomePage = () => {
             <div className="overlay"></div>
             
           </div>
-          <div className="donation-component teaching-material-donation">
+          <div className="donation-component teaching-material-donation" onClick={handleTeachingMaterialDonationClick}>
             <img src={teachingMaterialImage} alt="Teaching Material Donation" />
             <div className="overlay"></div>
             <h2>Teaching Material Donation</h2>

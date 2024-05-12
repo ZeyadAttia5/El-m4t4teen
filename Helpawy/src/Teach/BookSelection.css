@@ -1,0 +1,46 @@
+/* BookSelection.css */
+
+.body
+{
+  color: #000;
+}
+
+.books-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .books-container h1 {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  #LinkArrow
+  {
+    color: white;
+  }
+  .books-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .books-list li {
+    margin-bottom: 20px;
+  }
+  
+  .book-link {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-link:hover {
+    background-color: #555;
+    color: #fff;
+  }
+  

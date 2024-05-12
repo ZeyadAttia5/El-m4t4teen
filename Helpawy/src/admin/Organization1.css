@@ -1,0 +1,126 @@
+.organization-details {
+  position: relative; /* Make this container relatively positioned */
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #000000;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.accept-button, .reject-button, .download-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.accept-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.reject-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.download-button {
+  background-color: #008CBA;
+  color: white;
+}
+.download2-button {
+  background-color: #008CBA;
+  margin-top: 0px;
+  color: white;
+  padding: 10px 10px;
+  /* margin-right: 10px; */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.status {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.accepted {
+  background-color: #4caf50;
+  color: white;
+}
+
+.rejected {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Position the download button */
+.download-button {
+  position: absolute;
+  top: 20px; /* Adjust this value to position the button vertically */
+  right: 10px; /* Adjust this value to position the button horizontally */
+}
+
+
+.organization-select {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+.organization-select:focus {
+  outline: none;
+  border-color: #008CBA;
+}
+
+.confirm-button {
+  padding: 5px 5px;
+  margin-top: 10px;
+  width: 40%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #45a049;
+}
+
+.confirm-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
