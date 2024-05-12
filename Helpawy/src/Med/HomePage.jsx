@@ -42,31 +42,31 @@ const HomePage = () => {
             
             <h2>Medical Donation</h2>
             <img src={medicalDonationImage} alt="Medical Donation" />
-            <div className="overlay"></div>
+            
             
           </div>
           <div className="donation-component teaching-material-donation" onClick={handleTeachingMaterialDonationClick}>
             <img src={teachingMaterialImage} alt="Teaching Material Donation" />
-            <div className="overlay"></div>
+            
             <h2>Teaching Material Donation</h2>
           </div>
         </div>
         <div className="donation-row">
           <div className="donation-component food-donation" onClick={handleFoodDonationClick}>
             <img src={foodDonationImage} alt="Food Donation" />
-            <div className="overlay"></div>
+            
             <h2>Food Donation</h2>
           </div>
           <div className="donation-component clothes-donation" onClick={handleClothesDonationClick}>
             <img src={clothesDonationImage} alt="Clothes Donation" />
-            <div className="overlay"></div>
+            
             <h2>Clothes Donation</h2>
           </div>
         </div>
         <div className="donation-row">
           <div className="donation-component toy-donation" onClick={handleToyDonationClick}>
             <img src={toyDonationImage} alt="Toy Donation"  />
-            <div className="overlay"></div>
+            
             <h2>Toy Donation</h2>
           </div>
         </div>

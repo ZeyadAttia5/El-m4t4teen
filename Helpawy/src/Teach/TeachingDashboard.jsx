@@ -26,7 +26,7 @@ function TeachingDashboard({}) {
   };
   return (
     <div className="dashboard">
-      <h1>Welcome to the Medical Donation Dashboard</h1>
+      <h1>Welcome to the Teaching Donation Dashboard</h1>
       <div className="dashboard-options">
         <div className="dashboard-option medical-supplies" onClick={teacherformclick}>
           <h2>Teacher Form</h2>
