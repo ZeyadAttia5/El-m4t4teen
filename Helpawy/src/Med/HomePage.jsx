@@ -6,6 +6,7 @@ import foodDonationImage from '../assets/food_donation.jpg';
 import clothesDonationImage from '../assets/clothes_donation.jpg';
 import toyDonationImage from '../assets/toy_donation.jpg';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../OrganizationRepresentative/NavigationBar/NavBar'
 
 
 const HomePage = () => {
@@ -32,7 +33,9 @@ const HomePage = () => {
   };
 
   return (
+
     <div className="home-page">
+      <Navbar/>
       <h1>Welcome to Our Donation Platform</h1>
 
       <div className="donation-components">

@@ -48,7 +48,6 @@ import Settings from './Settings/Settings.jsx';
 
     return (
       <Router>
-        
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/AOL" element={<AOL />} />

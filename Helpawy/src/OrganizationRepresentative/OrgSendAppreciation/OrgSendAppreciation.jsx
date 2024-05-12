@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TextField, Button, Snackbar, Typography, Card, CardContent } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
+import { useNavigate } from 'react-router-dom'; // Import the Link component
 import './OrgSendAppreciation.css'; // Import the CSS file
 
 const OrgSendAppreciation = () => {
@@ -15,6 +16,7 @@ const OrgSendAppreciation = () => {
     const [message, setMessage] = useState(`${donor.name}, thank you for donating ${donor.donationAmount} ${donor.donationTitle}!`);
     const [openSuccess, setOpenSuccess] = useState(false);
     const [openError, setOpenError] = useState(false);
+    const navigate = useNavigate();
 
 
 
@@ -33,6 +35,10 @@ const OrgSendAppreciation = () => {
         console.log('Appreciation message sent:', message);
         setMessage(''); // Clear the message input after sending
         setOpenSuccess(true); // Open the success Snackbar
+        //set timeout to navigate back to dashboard
+        setTimeout(() => {
+            navigate('/OrgDashboard');
+        }, 2000);
     };
 
     const handleClose = (event, reason) => {
