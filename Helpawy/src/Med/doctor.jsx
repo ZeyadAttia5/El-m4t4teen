@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './doctor.css'; // Import CSS file
 import MedicalCaseDetailsPopup from "./MedicalCaseDetailsPopup.jsx";
 import AssignedPopup from "./AssignedPopup.jsx"; // Import the new popup component
-
+import { GoogleMap,Marker, LoadScript } from '@react-google-maps/api';
 // Sample medical cases data
 const medicalCasesData = [
   {
@@ -18,6 +18,7 @@ const medicalCasesData = [
     organizationName: 'Medical Center',
     medicalSpecialty: 'Cardiology',
     caseDescription: 'Patient needs heart surgery.',
+    coordinates: {lat: 31.2525588, lng: 29.9766823}
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const medicalCasesData = [
     organizationName: 'Hospital XYZ',
     medicalSpecialty: 'Orthopediology',
     caseDescription: 'Patient needs bone treatment.',
+    coordinates: {lat: 31.2525588, lng: 29.9766823}
   },
   // Add more medical cases as needed
 ];
