@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import './ClothesPopup.css';
 
+import { useNavigate } from 'react-router-dom';
+
 const ClothesPopup = ({ selectedRequest, onClose, onDonate }) => {
+  const navigate = useNavigate();
+
+  const handleDonate = () => {
+    navigate('/DonateSchedPicker'); 
+  };
   const [donatedQuantity, setDonatedQuantity] = useState(0);
 
   const handleQuantityChange = (event) => {
@@ -29,7 +36,7 @@ const ClothesPopup = ({ selectedRequest, onClose, onDonate }) => {
                 value={donatedQuantity}
                 onChange={handleQuantityChange}
               />
-              <button className="donate-button" onClick={() => onDonate(donatedQuantity)}>Donate</button>
+              <button className="donate-button" onClick={() => {onDonate(donatedQuantity); handleDonate}}>Donate</button>
             </div>
           </div>
         )}

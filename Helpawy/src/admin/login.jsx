@@ -158,17 +158,17 @@ const handleClinicMapClick = (e) => {
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {(registrationMode && !DonorregistrationMode) && (
           <>
-            <input type="text" placeholder="First Name*" required />
-            <input type="text" placeholder="Last Name*" required />
+            <input className='inputamr' type="text" placeholder="First Name*" required />
+            <input className='inputamr' type="text" placeholder="Last Name*" required />
             <select className='organization-selectt' required>
               <option className = 'organization-selectt'value="">Select Gender*</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-            <input type="email" placeholder="Email*" required />
-            <input type="password" placeholder="Password*" required />
-            <input type="number" placeholder="Contact Number*" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-            <input type="text" placeholder="Organization Name*" required />
+            <input className='inputamr' type="email" placeholder="Email*" required />
+            <input className='inputamr' type="password" placeholder="Password*" required />
+            <input className='inputamr' type="number" placeholder="Contact Number*" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+            <input className='inputamr' type="text" placeholder="Organization Name*" required />
             <select className='organization-selectt' required>
               <option value="">Select Organization Type*</option>
               <option value="type1">school</option>
@@ -222,19 +222,19 @@ const handleClinicMapClick = (e) => {
         )}
         {(!registrationMode && DonorregistrationMode) && (
   <>
-    <input type="text" placeholder="First Name*" required />
-    <input type="text" placeholder="Last Name*" required />
+    <input className='inputamr' type="text" placeholder="First Name*" required />
+    <input className='inputamr'type="text" placeholder="Last Name*" required />
     <select className='organization-selectt' required>
       <option value="">Select Gender*</option>
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select>
-    <input type="email" placeholder="Email*" required />
-    <input type="password" placeholder="Password*" required />
-    <input type="number" placeholder="Contact Number*" required />
-    <input type="text" placeholder="Address*" required />
-    <input type="text" placeholder="Area*" required />
-    <input type="text" placeholder="Governorate*" required />
+    <input className='inputamr' type="email" placeholder="Email*" required />
+    <input className='inputamr' type="password" placeholder="Password*" required />
+    <input className='inputamr'type="number" placeholder="Contact Number*" required />
+    <input className='inputamr'type="text" placeholder="Address*" required />
+    <input className='inputamr'type="text" placeholder="Area*" required />
+    <input className='inputamr'type="text" placeholder="Governorate*" required />
     <select className='organization-selectt' onChange={handleSpecializationChange} required>
       <option value="">Specialization*</option>
       <option value="regular">Regular Donor</option>
@@ -280,8 +280,8 @@ const handleClinicMapClick = (e) => {
 
         {!registrationMode && !DonorregistrationMode && (
           <>
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input className='inputamr' type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input className='inputamr' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </>
         )}
         <button type="submit">{registrationMode || DonorregistrationMode ? <strong>Register</strong> : <strong>Login</strong>}</button>
