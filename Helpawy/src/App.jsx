@@ -37,6 +37,16 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<LoginPage/>} />
+        <Route path="/AOL" element={<AOL/>} />
+        <Route path="/DL" element={<DL/>} />
+        <Route path="/organization1" element={<Organization1/>} />
+        <Route path="/organization2" element={<Organization2/>} />
+        <Route path="/organization3" element={<Organization3/>} />
+        <Route path="/donor1" element={<Donor1/>} />
+        <Route path="/donor2" element={<Donor2/>} />
+        <Route path="/ChangePasswordPage" element={<ChangePasswordPage/>} />
+        <Route path="/adminDashboard" element={<AdminDashboard/>} />
         <Route path="/HomePage" element={<HomePage/>} />
         <Route path="/MedDashboard" element={<MedDashboard />} />
         <Route path="/BloodDonation" element={<BloodDonationComponent />} />
@@ -57,16 +67,7 @@ function App() {
         <Route path="/stationary-lists" element={<StationaryLists />} />
         <Route path="/items/:id" element={<StationaryDetails />} />
         <Route path="/stationary-details" element={<StationaryDetails />} />
-        <Route path="/" element={<LoginPage/>} />
-        <Route path="/AOL" element={<AOL/>} />
-        <Route path="/DL" element={<DL/>} />
-        <Route path="/organization1" element={<Organization1/>} />
-        <Route path="/organization2" element={<Organization2/>} />
-        <Route path="/organization3" element={<Organization3/>} />
-        <Route path="/donor1" element={<Donor1/>} />
-        <Route path="/donor2" element={<Donor2/>} />
-        <Route path="/ChangePasswordPage" element={<ChangePasswordPage/>} />
-        <Route path="/adminDashboard" element={<AdminDashboard/>} />
+        
         </Routes>
     </Router>
 

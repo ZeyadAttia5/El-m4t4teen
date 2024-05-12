@@ -1,4 +1,4 @@
-body {
+.body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
@@ -155,7 +155,7 @@ margin-left: 60px;
   margin-bottom: 30px;
 }
 
-p {
+.p {
   color: #aaa;
   margin-bottom: 20px;
 }
@@ -164,7 +164,7 @@ p {
   margin-bottom: 20px;
 }
 
-input {
+.input {
   width: 95%;
   padding: 10px;
   margin-bottom: 10px;

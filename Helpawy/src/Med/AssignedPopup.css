@@ -1,4 +1,4 @@
-.overlay {
+.overlayc {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     align-items: center;
   }
   
-  .popup {
+  .popup1 {
     background-color: #222;
     padding: 20px;
     padding-left: 40px;
