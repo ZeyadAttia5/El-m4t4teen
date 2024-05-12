@@ -1,20 +1,30 @@
-import './App.css'
-// import ChooseItemTypePage from './ChooseItemTypePage/ChooseItemTypePage.jsx'; // Assuming you have a component for choosing item type
-import React, { useState } from 'react'
-import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
-import MedicalSuppliesComponent from './Med/medicalSupplies.jsx'
-function App() {
+import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TeachingDashboard from './Teach/TeachingDashboard.jsx';
+import TeacherForm from './Teach/TeacherForm.jsx';
+import TeacherList from './Teach/TeachingPosts.jsx';
+import BookSelection from './Teach/BookSelection.jsx';
+import StationaryLists from './Teach/StationaryLists.jsx';
 
-  const [showBloodDonation, setShowBloodDonation] = useState(false);
-  const [showSupplies, setSuppliesClick] = useState(false);
+function App() {
+ 
+ 
 
   return (
-    <>
-      <MedicalSuppliesComponent/>
-
-    </>
+    
+    <Router>
+      <Routes>
+        <Route path="/" element={<TeachingDashboard/>} />
+        <Route path="/teacher-form" element={<TeacherForm />} />
+        <Route path="/teaching-posts" element={<TeacherList />} />
+        <Route path="/book-selection" element={<BookSelection />} />
+        <Route path="/stationary-lists" element={<StationaryLists />} />
+      </Routes>
+    </Router>
+    
+   
   );
-  
 }
 
-export default App
+export default App;
