@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   const handleProfileSettings = () => {
-    navigate('settings');
+    navigate('/settings');
   };
 
   const handleProfileClose = () => {

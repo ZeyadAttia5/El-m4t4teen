@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextField, Button, Dialog, DialogActions, DialogContent, DialogTitle, Alert } from '@mui/material';
+import { TextField, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './Settings.css'; // Import the CSS file
 
@@ -32,7 +32,7 @@ const SettingsComponent = () => {
         setOpenDeleteDialog(false); // Close delete confirmation dialog
         setTimeout(() => {
             alert(`Account deleted successfully!`);
-            navigate('/login'); // Redirect to login page
+            navigate('/'); // Redirect to login page
         }, 2000); // Delay in milliseconds (e.g., 2000 for 2 seconds)
     };
 

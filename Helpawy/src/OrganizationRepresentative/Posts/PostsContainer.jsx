@@ -8,7 +8,7 @@ import ventilator from '../../assets/ventilator.jpg';
 import diazepam from '../../assets/diazepam.jpg';
 import actonel from "../../assets/actonel.jpg";
 import AddIcon from '@mui/icons-material/Add';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
