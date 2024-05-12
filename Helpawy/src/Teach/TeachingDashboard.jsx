@@ -19,7 +19,7 @@ function TeachingDashboard({}) {
   };
 
   const bookselectionclick = () => {
-    navigate('/book-seleection'); // Navigate to the volunteer as doctor route
+    navigate('/book-selection'); // Navigate to the volunteer as doctor route
   };
   const stationarypostsclick = () => {
     navigate('/stationary-lists'); // Navigate to the volunteer as doctor route
@@ -28,7 +28,7 @@ function TeachingDashboard({}) {
     <div className="dashboard">
       <h1>Welcome to the Medical Donation Dashboard</h1>
       <div className="dashboard-options">
-        <div className="dashboard-option medical-supplies" onClick={teacherclick}>
+        <div className="dashboard-option medical-supplies" onClick={teacherformclick}>
           <h2>Teacher Form</h2>
           <p>Apply as a Teacher.</p>
         </div>
