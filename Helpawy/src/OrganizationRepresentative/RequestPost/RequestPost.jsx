@@ -42,13 +42,11 @@ const RequestCard = () => {
 
   const handlePostRequest = () => {
     // Add functionality to handle posting the request here
+    event.preventDefault();
     console.log("Request posted!");
     setRequestPosted(true);
   };
 
-  const handleSubmit = (e) => {
-
-  }
 
   const renderAdditionalFields = () => {
     switch (selectedCategory) {
@@ -549,13 +547,18 @@ const RequestCard = () => {
     }
   };
 
+  const handleCancel = () => {
+
+    navigateTo('/OrgDashboard');
+  };
+
 
   useEffect(() => {
     if (requestPosted) {
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
-        navigateTo('/org-main-page');
+        navigateTo('/OrgDashboard');
       }, 3000); // Adjust the delay time here (in milliseconds)
     }
   }, [requestPosted, navigateTo]);
@@ -563,7 +566,7 @@ const RequestCard = () => {
   return (
     <div className="donation-request-card">
       <h3>Donation Post Request</h3>
-      <form onSubmit={handlePostRequest} className='form-container'>
+      <form onSubmit={handlePostRequest} className='form-container' >
         <div className="category-dropdown">
           < TextField
             required
@@ -580,7 +583,10 @@ const RequestCard = () => {
           </TextField>
         </div>
         {renderAdditionalFields()}
-        <Button type="submit" className='post-button'>Post Request</Button>
+        <div className='form-buttons'>
+          <Button className='post-button' onClick={handleCancel}>Cancel</Button>
+          <Button type="submit" className='post-button'>Post Request</Button>
+        </div>
       </form>
       {showMessage && <p>Request posted</p>}
     </div>

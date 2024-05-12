@@ -115,3 +115,22 @@ p {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.form-buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.form-buttons .MuiButton-root{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.form-buttons .MuiButton-root:hover{
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+}
