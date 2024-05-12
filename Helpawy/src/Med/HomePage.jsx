@@ -24,7 +24,7 @@ const HomePage = () => {
   };
 
   const handleClothesDonationClick = () => {
-    // Handle navigation or other actions related to clothes donation
+    navigate('/ClothesDonation');
   };
 
   const handleToyDonationClick = () => {
@@ -57,7 +57,7 @@ const HomePage = () => {
             <div className="overlay"></div>
             <h2>Food Donation</h2>
           </div>
-          <div className="donation-component clothes-donation">
+          <div className="donation-component clothes-donation" onClick={handleClothesDonationClick}>
             <img src={clothesDonationImage} alt="Clothes Donation" />
             <div className="overlay"></div>
             <h2>Clothes Donation</h2>

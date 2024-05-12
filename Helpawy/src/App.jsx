@@ -6,6 +6,7 @@ import BloodDonationComponent from './Med/BloodDonation.jsx';
 import MedicalCasesComponent from './Med/doctor.jsx';
 import ToyDonationRequests from './FTC/Toys.jsx';
 import FoodDonationComponent from './FTC/Food.jsx';
+import ClothesDonationComponent from './FTC/Clothes.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './Med/HomePage.jsx';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/MedicalCases" element={<MedicalCasesComponent />} />
         <Route path="/ToyDonation" element={<ToyDonationRequests />} />
         <Route path="/FoodDonation" element={<FoodDonationComponent />} />
+        <Route path="/ClothesDonation" element={<ClothesDonationComponent />} />
       </Routes>
     </Router>
     
