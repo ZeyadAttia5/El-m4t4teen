@@ -12,6 +12,9 @@
   .dashboard h1 {
     margin: 0 auto 20px;
   }
+  .p{
+    color: #ffffff;
+  }
   
   .dashboard-options {
     display: flex;

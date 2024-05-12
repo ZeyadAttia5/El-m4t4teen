@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Organization1.css'; // Import CSS file for styling
 
 const Organization1 = () => {
@@ -38,7 +40,8 @@ const Organization1 = () => {
 
   return (
     <div className="organization-details">
-      <h2 className="heading">Donor Details</h2>
+      <h2 className="heading">
+      <Link to="/DL" className="back-arroww"><FaArrowLeft /></Link>  Donor Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}

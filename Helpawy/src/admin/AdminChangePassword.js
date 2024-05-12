@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 const ChangePasswordPage = () => {
@@ -34,8 +36,11 @@ const ChangePasswordPage = () => {
     }
 
     // Set the error message
-    setErrorMessage(newErrorMessage || 'Password changed successfully');
+    alert(newErrorMessage || 'Password changed successfully');
 
+    if((newPassword === confirmNewPassword) && (oldPassword === storedPassword)){
+      window.location.href='/adminDashboard';
+    }
     // Return if there are any errors
     if (newErrorMessage) return;
 
@@ -50,7 +55,8 @@ const ChangePasswordPage = () => {
   return (
     <div className="login-page">
       <form onSubmit={handleChangePassword} className="login-form">
-        <h2 className='h2'>Change Password</h2>
+        <h2 className='h2'>
+        <Link to="/AdminDashboard" className="back-arrow"><FaArrowLeft /></Link>  Change Password</h2>
         {errorMessage && (
           <p className="error-message">{errorMessage}</p>
         )}

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Organization1.css'; // Import CSS file for styling
 
 const Organization1 = () => {
@@ -7,7 +9,7 @@ const Organization1 = () => {
     name: 'Organization A',
     email: 'orga@example.com',
     number: '01234646853',
-    legalDocuments: 'Submitted document',
+    legalDocuments: '',
     requestDate: '2024-05-04',
   };
 
@@ -34,25 +36,27 @@ const Organization1 = () => {
     URL.revokeObjectURL(url);
   };
   const handleDownloadSubmittedDocument = () => {
-    // Assuming organization.legalDocuments holds the URL of the uploaded file
-    const downloadUrl = organization.legalDocuments;
+    // Generate a dummy PDF blob
+    const dummyPdfBlob = new Blob(['Dummy PDF Content'], { type: 'application/pdf' });
     
-    if (downloadUrl) {
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = 'submitted_document.pdf'; // Set the desired file name here
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else {
-      // Handle the case where the document hasn't been uploaded yet
-      alert('Document has not been uploaded yet.');
-    }
+    // Create a blob URL for the dummy PDF
+    const url = window.URL.createObjectURL(dummyPdfBlob);
+    
+    // Create a temporary anchor element and trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dummy_document.pdf'; // Set the desired file name here
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    // Release the blob URL
+    window.URL.revokeObjectURL(url);
   };
-
   return (
     <div className="organization-details">
-      <h2 className="heading">Organization Details</h2>
+      <h2 className="heading">
+      <Link to="/AOL" className="back-arroww"><FaArrowLeft /></Link>  Organization Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}

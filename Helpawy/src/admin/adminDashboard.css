@@ -1,0 +1,97 @@
+.dashboard {
+  background-color: #333; /* Dark gray background */
+  color: #fff; /* White text */
+  padding: 20px;
+  width: 62%; /* Set width to auto */
+  margin: auto;
+  margin-top: 15%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  /* margin-left: 200px; */
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.dashboard h1 {
+  margin: 0;
+}
+
+.dashboard-options {
+  /* float: inline-start; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-option {
+  width: calc(33.33% - 10px); /* Four items per row with some margin */
+  padding: 20px;
+  margin-right: 10px; /* Add some right margin */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-option:hover {
+  background-color: #555; /* Darker gray on hover */
+}
+
+.medical-supplies {
+  background-color: #4CAF50; /* Green */
+}
+
+.blood-donation {
+  background-color: #F44336; /* Red */
+}
+
+.doctor-visit {
+  background-color: #2196F3; /* Blue */
+}
+
+.change-password {
+  background-color: #ffffff; /* Purple */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  color: #333;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.change-password2 {
+  background-color: #ffffff; /* Purple */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 40px;
+  color: #333;
+  padding-left: 35px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.change-password:hover {
+  background-color: #555; /* Darker purple on hover */
+}
+
+.change-password2:hover {
+  background-color: #555; /* Darker purple on hover */
+}
+
+
+.p {
+  color: #f8f8f8;
+}

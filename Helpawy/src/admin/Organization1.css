@@ -1,12 +1,27 @@
 .organization-details {
   position: relative; /* Make this container relatively positioned */
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 3%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #000000;
+  background-color:  rgba(255, 255, 255, 0.1);
 }
+
+.back-arroww {
+  font-size: 18px;
+  padding-right: 5px;
+  /* padding-top: 50px; */
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.back-arroww:hover {
+  color: #555;
+}
+
 
 .heading {
   margin-top: 0;
@@ -46,18 +61,23 @@
 }
 
 .download-button {
-  background-color: #008CBA;
-  color: white;
+  background-color: #ffffff; 
+  color: rgb(0, 0, 0);
 }
 .download2-button {
-  background-color: #008CBA;
+  background-color: #ffffff;
   margin-top: 0px;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px 10px;
   /* margin-right: 10px; */
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download2-button:hover{
+  background-color: #555; 
 }
 
 .status {
@@ -81,8 +101,15 @@
 /* Position the download button */
 .download-button {
   position: absolute;
+  /* padding-left: 7px;
+  padding-right: 7px; */
   top: 20px; /* Adjust this value to position the button vertically */
   right: 10px; /* Adjust this value to position the button horizontally */
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover{
+  background-color: #555; 
 }
 
 
@@ -117,7 +144,7 @@
 }
 
 .confirm-button:hover {
-  background-color: #45a049;
+  background-color: #555; 
 }
 
 .confirm-button:disabled {

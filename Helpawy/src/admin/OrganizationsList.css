@@ -44,7 +44,17 @@
 }
 
 .view-details-button {
-  color: #58a9ff;
+  color: #76b6fc;
+}
+.back-arrow {
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: #555;
 }
 
 .organizations-table th,

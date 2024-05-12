@@ -22,12 +22,14 @@ const LoginPage = () => {
     // Check email and password for authentication
     if (email === 'admin@example.com' && password === 'admin123') {
       // Redirect to the admin dashboard if email and password are correct
-      window.location.href = '/ChangePasswordPage';
-    } else if (email === 'user@example.com' && password === 'user123') {
+      window.location.href = '/adminDashboard';
+    } else if (email === 'donor@example.com' && password === 'donor123') {
       // Redirect to the user dashboard if email and password are correct
       window.location.href = '/DL';
-    } else {
+    } else if(email === 'organiztion@example.com' && password === 'organiztion123'){
       // Display error message for incorrect credentials
+      window.location.href = '/DL';
+    }else{
       alert('Invalid email or password');
     }
   };
@@ -57,29 +59,32 @@ const LoginPage = () => {
     if (phoneNumber.length !== 11) {
       alert('Phone number must be 11 digits long.');
       return;
+    }else if(uploadedFileName === null && !markerPosition){
+      alert("Please upload your organization's document for verification and pin its location");
+      return;
+    }else if (!markerPosition) {
+      alert("Please pin your organization's location ");
+      return;
+    } else if((uploadedFileName === null)){
+      alert("Please upload your organization's document for verification.");
+      return;
     }
+  
+    
   
     // Check if either the location is not pinned or no file is uploaded
-    if (!markerPosition && !uploadedFileName) {
-      alert("Please pin your organization's location and upload a document for verification.");
-      return;
-    }
-  
-    // Check if the location is not pinned
-    if (!markerPosition) {
-      alert("Please pin your organization's location.");
-      return;
-    }
-  
-    // Check if no file is uploaded
-    if (!uploadedFileName) {
-      alert("Please upload a document for organization verification.");
-      return;
-    }
+    
   
     // Proceed with registration if all conditions are met
     alert('Registration successful! You can now log in.');
     window.location.href = '/';
+    // Reset the form fields and mode after successful registration
+    setEmail('');
+    setPassword('');
+    setPhoneNumber('');
+    setUploadedFileName(null);
+    setMarkerPosition(null);
+    setRegistrationMode(false);
   };
   
 
@@ -138,7 +143,7 @@ const LoginPage = () => {
             <input type="text" placeholder="First Name*" required />
             <input type="text" placeholder="Last Name*" required />
             <select className='organization-selectt' required>
-              <option value="">Select Gender*</option>
+              <option className = 'organization-selectt'value="">Select Gender*</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
@@ -163,13 +168,13 @@ const LoginPage = () => {
             )}
               <label htmlFor="document-upload" className="upload-button">
                 <span>{uploadedFileName || 'Choose File'}</span>
-                <input type="file" id="document-upload" accept=".pdf,.doc,.docx" onChange={handleFileUpload} required />
+                <input type="file" id="document-upload" accept=".pdf,.doc,.docx" onChange={handleFileUpload}/>
               </label>
             </div>
             <input type="text" placeholder="Organization Address*" required />
             <input type="text" placeholder="Area*" required />
             <input type="text" placeholder="Governorate*" required />
-            <div className="login-page">
+            <div>
             {(!markerPosition && registrationMode && registerClicked) && (
               <p className="upload-instruction" style={{ color: 'red' }}>Please pin your organization's location:</p>
             )}
