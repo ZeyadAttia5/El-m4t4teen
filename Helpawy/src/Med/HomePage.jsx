@@ -6,7 +6,7 @@ import foodDonationImage from '../assets/food_donation.jpg';
 import clothesDonationImage from '../assets/clothes_donation.jpg';
 import toyDonationImage from '../assets/toy_donation.jpg';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../OrganizationRepresentative/NavigationBar/NavBar'
+import Navbar from '../donorNavbar/NavBar.jsx'
 
 
 const HomePage = () => {
