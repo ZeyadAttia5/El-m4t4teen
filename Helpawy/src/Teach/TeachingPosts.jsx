@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './TeachingPosts.css';
 
 const teachers = [
@@ -8,12 +8,15 @@ const teachers = [
   { id: 3, name: 'Physics Teacher', subject: 'Physics', teachingAreas: 'Sidi Bishr', governorate: 'Alexandria' },
 ];
 
-const TeacherList = () => {
+const TeachingPosts = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState('');
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
+  
+  
 
   const filteredTeachers = teachers.filter(teacher => {
     return teacher.subject.toLowerCase().includes(filter.toLowerCase()) ||
@@ -21,19 +24,25 @@ const TeacherList = () => {
            teacher.governorate.toLowerCase().includes(filter.toLowerCase());
   });
 
+  const teachersclick = () => {
+    navigate(`/teachers/${teacher.id}`); 
+  };
+
   return (
     <div className="teacher-list-container">
       <h1>Teachers</h1>
       <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by subject, area, or governorate" />
       <ul>
         {filteredTeachers.map(teacher => (
-          <li key={teacher.id}>
-            <Link to={`/teachers/${teacher.id}`} className="teacher-link">{teacher.name}</Link>
-          </li>
+          <li key={teacher.id} onClick={() => navigate(`/teachers/${teacher.id}`)}>
+          <div className="teacher-link">
+            <h2>{teacher.name}</h2>
+          </div>
+        </li>
         ))}
       </ul>
     </div>
   );
 }
 
-export default TeacherList;
+export default TeachingPosts;

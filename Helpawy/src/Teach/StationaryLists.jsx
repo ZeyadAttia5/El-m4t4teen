@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TeachingPosts.css';
-
+import { useNavigate } from 'react-router-dom';
 const teachers = [
   { id: 1, name: 'Physics Books'},
   { id: 2, name: 'Math Books' },
@@ -24,6 +24,7 @@ const StationaryLists = () => {
   const filteredTeachers = teachers.filter(teacher => {
     return teacher.name.toLowerCase().includes(filter.toLowerCase())     
   });
+  const navigate = useNavigate();
 
   return (
     <div className="teacher-list-container">

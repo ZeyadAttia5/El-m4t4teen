@@ -7,7 +7,8 @@ body {
 }
 
 .teacher-details-container {
-  max-width: 600px;
+  max-width: 1000px;
+  min-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #555;
@@ -21,13 +22,14 @@ body {
 }
 
 .teacher-details-container h2 {
-  font-size: 24px;
+  font-size: 40px;
   margin-bottom: 10px;
   
 }
 
 .teacher-details-container p {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .teacher-details-container button {
@@ -57,4 +59,10 @@ body {
 
 .teacher-details-container #button2:hover {
   background-color: #222;
+}
+
+input {
+  size: 30px;
+  width: 90px;
+  height: 20px;
 }
