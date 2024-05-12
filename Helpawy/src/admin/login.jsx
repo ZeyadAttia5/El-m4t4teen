@@ -46,7 +46,7 @@ const handleClinicMapClick = (e) => {
       window.location.href = '/HomePage';
     } else if(email === 'organiztion@example.com' && password === 'organiztion123'){
       // Display error message for incorrect credentials
-      window.location.href = '/DL';
+      window.location.href = '/OrgDashboard';
     }else{
       alert('Invalid email or password');
     }
