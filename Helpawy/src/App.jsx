@@ -20,7 +20,8 @@ function App() {
         <Route path="/" element={<TeachingDashboard/>} />
 
         <Route path="/teacher-form" element={<TeacherForm />} />
-
+        
+        
         <Route path="/teaching-posts" element={<TeachingPosts />} />
         <Route path="/teachers/:id" element={<TeacherDetails />} />
         <Route path="/teaching-details" element={<TeacherDetails />} />

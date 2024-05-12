@@ -62,6 +62,7 @@ const TeacherForm = () => {
   return (
     <div className="teacher-form-container">
       <h2>Teacher Form</h2>
+      
       <div className="subject-selection">
         <label>Select Subjects:</label>
         {subjects.map((subject, index) => (
