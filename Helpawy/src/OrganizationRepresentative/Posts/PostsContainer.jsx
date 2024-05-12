@@ -143,6 +143,12 @@ const PostsContainer = () => {
     setSelectedPost(null);
   };
 
+  const updatePost = (updatedPost) => {
+    setPosts(prevPosts => prevPosts.map(post =>
+      post.id === updatedPost.id ? updatedPost : post
+    ));
+  };
+
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
@@ -173,6 +179,7 @@ const PostsContainer = () => {
             post={post}
             onDelete={handleDelete}
             onViewDetails={handleViewDetails}
+            onUpdateDetails={updatePost}
           />
         ))}
       </List>
