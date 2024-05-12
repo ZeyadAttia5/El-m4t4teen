@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Organization1.css'; // Import CSS file for styling
 
-const Organization2 = () => {
+const Organization3 = () => {
   // Sample organization data
   const organization = {
-    name: 'Organization B',
-    email: 'orgb@example.com',
-    number: '01507954562',
-    legalDocuments: 'Legal Documents 2',
-    requestDate: '2024-05-05',
+    name: 'Organization C',
+    email: 'orgc@example.com',
+    number: '0468621384',
+    requestDate: '2024-05-10',
   };
 
   const [status, setStatus] = useState(null);
@@ -20,7 +21,6 @@ const Organization2 = () => {
   const handleReject = () => {
     setStatus('Rejected');
   };
-
   const handleDownload = () => {
     const data = `Name: ${organization.name}\nEmail: ${organization.email}\nNumber: ${organization.number}\nSubmitted document: ${organization.legalDocuments}\nRequest Date: ${organization.requestDate}`;
     const blob = new Blob([data], { type: 'text/plain' });
@@ -34,25 +34,28 @@ const Organization2 = () => {
     URL.revokeObjectURL(url);
   };
   const handleDownloadSubmittedDocument = () => {
-    // Assuming organization.legalDocuments holds the URL of the uploaded file
-    const downloadUrl = organization.legalDocuments;
+    // Generate a dummy PDF blob
+    const dummyPdfBlob = new Blob(['Dummy PDF Content'], { type: 'application/pdf' });
     
-    if (downloadUrl) {
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = 'submitted_document.pdf'; // Set the desired file name here
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else {
-      // Handle the case where the document hasn't been uploaded yet
-      alert('Document has not been uploaded yet.');
-    }
+    // Create a blob URL for the dummy PDF
+    const url = window.URL.createObjectURL(dummyPdfBlob);
+    
+    // Create a temporary anchor element and trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dummy_document.pdf'; // Set the desired file name here
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    // Release the blob URL
+    window.URL.revokeObjectURL(url);
   };
 
   return (
     <div className="organization-details">
-      <h2 className="heading">Organization Details</h2>
+      <h2 className="heading">
+      <Link to="/AOL" className="back-arroww"><FaArrowLeft /></Link> Organization Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}
@@ -87,4 +90,4 @@ const Organization2 = () => {
   );
 };
 
-export default Organization2;
+export default Organization3;

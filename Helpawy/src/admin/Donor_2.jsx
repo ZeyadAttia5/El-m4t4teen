@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Organization1.css'; // Import CSS file for styling
 
 const Organization1 = () => {
   // Sample organization data
   const organization = {
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    number: '061231655516',
-    legalDocuments: 'Doctor', //profession
-    requestDate: '2024-05-04',
+    name: 'Jane Doe',
+    email: 'janedoe@example.com',
+    number: '0165165161',
+    legalDocuments: 'Teacher', //profession
+    requestDate: '2024-05-10',
   };
 
   const [status, setStatus] = useState(null);
@@ -38,7 +40,8 @@ const Organization1 = () => {
 
   return (
     <div className="organization-details">
-      <h2 className="heading">Donor Details</h2>
+      <h2 className="heading">
+      <Link to="/DL" className="back-arroww"><FaArrowLeft /></Link>  Donor Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}

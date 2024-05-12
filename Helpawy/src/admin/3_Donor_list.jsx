@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './DonorsList.css'; // Assuming you have styles in DonorsList.css
 
@@ -25,7 +26,9 @@ function DonorsList() {
 
   return (
     <div className="donors-list-container">
-      <h2 className="donors-list-heading">Donors List</h2>
+      <h2 className="donors-list-heading">
+      <Link to="/AdminDashboard" className="back-arrow"><FaArrowLeft /></Link>        Donors List
+      </h2>
       <table className="donors-table">
         <thead>
           <tr>

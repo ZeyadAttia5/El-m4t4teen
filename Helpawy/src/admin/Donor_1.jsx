@@ -1,56 +1,48 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link component
 import './Organization1.css'; // Import CSS file for styling
 
-const Organization3 = () => {
+const Organization1 = () => {
   // Sample organization data
   const organization = {
-    name: 'Organization C',
-    email: 'orgc@example.com',
-    number: '0468621384',
-    requestDate: '2024-05-10',
+    name: 'John Doe',
+    email: 'johndoe@example.com',
+    number: '061231655516',
+    legalDocuments: 'Doctor', //profession
+    requestDate: '2024-05-04',
   };
 
   const [status, setStatus] = useState(null);
+  const [accepted, setAccepted] = useState(false);
 
   const handleAccept = () => {
+    setAccepted(true);
     setStatus('Accepted');
   };
 
   const handleReject = () => {
     setStatus('Rejected');
   };
+
   const handleDownload = () => {
-    const data = `Name: ${organization.name}\nEmail: ${organization.email}\nNumber: ${organization.number}\nSubmitted document: ${organization.legalDocuments}\nRequest Date: ${organization.requestDate}`;
+    const data = `Name: ${organization.name}\nEmail: ${organization.email}\nNumber: ${organization.number}\nProfession: ${organization.legalDocuments}\nRequest Date: ${organization.requestDate}`;
     const blob = new Blob([data], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'organization_details.txt';
+    a.download = 'donor_details.txt';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
-  const handleDownloadSubmittedDocument = () => {
-    // Assuming organization.legalDocuments holds the URL of the uploaded file
-    const downloadUrl = organization.legalDocuments;
-    
-    if (downloadUrl) {
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = 'submitted_document.pdf'; // Set the desired file name here
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else {
-      // Handle the case where the document hasn't been uploaded yet
-      alert('Document has not been uploaded yet.');
-    }
-  };
 
   return (
     <div className="organization-details">
-      <h2 className="heading">Organization Details</h2>
+      
+      <h2 className="heading">
+      <Link to="/DL" className="back-arroww"><FaArrowLeft /></Link> Donor Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}
@@ -62,27 +54,22 @@ const Organization3 = () => {
           <span className="label">Number:</span> {organization.number}
         </div>
         <div className="info-item">
-        <span className="label">Submitted document:</span> {organization.legalDocuments}
-          {(
-            <button className="download2-button" onClick={handleDownloadSubmittedDocument}>
-              Download Submitted Document
-            </button>
-          )}
+          <span className="label">Profession:</span> {organization.legalDocuments}
         </div>
         <div className="info-item">
           <span className="label">Request Date:</span> {organization.requestDate}
         </div>
       </div>
-      {!status && (
+      {status && <div className={`status ${status.toLowerCase()}`}>{status}</div>}
+      {!status && !accepted && (
         <div className="button-group">
           <button className="accept-button" onClick={handleAccept}>Accept</button>
           <button className="reject-button" onClick={handleReject}>Reject</button>
         </div>
       )}
       <button className="download-button" onClick={handleDownload}>Download Details</button>
-      {status && <div className={`status ${status.toLowerCase()}`}>{status}</div>}
     </div>
   );
 };
 
-export default Organization3;
+export default Organization1;

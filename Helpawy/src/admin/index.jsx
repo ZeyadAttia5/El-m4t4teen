@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import AOL from './2_Admin_organization_list';
 import DL from './3_Donor_list';
+import AdminDashboard from './Admin_Dashboard.js';
 import ChangePasswordPage from './AdminChangePassword';
 import App from './App';
 import Donor1 from './Donor_1';
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+  },
+
+  {
+    path: "adminDashboard",
+    element: <AdminDashboard/>,
   },
 
   {

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Organization1.css'; // Import CSS file for styling
 
-const Organization1 = () => {
+const Organization2 = () => {
   // Sample organization data
   const organization = {
-    name: 'Organization A',
-    email: 'orga@example.com',
-    number: '01234646853',
-    legalDocuments: 'Submitted document',
-    requestDate: '2024-05-04',
+    name: 'Organization B',
+    email: 'orgb@example.com',
+    number: '01507954562',
+    legalDocuments: '',
+    requestDate: '2024-05-05',
   };
 
   const [status, setStatus] = useState(null);
@@ -22,7 +24,7 @@ const Organization1 = () => {
   };
 
   const handleDownload = () => {
-    const data = `Name: ${organization.name}\nEmail: ${organization.email}\nNumber: ${organization.number}\nSubmitted document ${organization.legalDocuments}\nRequest Date: ${organization.requestDate}`;
+    const data = `Name: ${organization.name}\nEmail: ${organization.email}\nNumber: ${organization.number}\nSubmitted document: ${organization.legalDocuments}\nRequest Date: ${organization.requestDate}`;
     const blob = new Blob([data], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -34,25 +36,28 @@ const Organization1 = () => {
     URL.revokeObjectURL(url);
   };
   const handleDownloadSubmittedDocument = () => {
-    // Assuming organization.legalDocuments holds the URL of the uploaded file
-    const downloadUrl = organization.legalDocuments;
+    // Generate a dummy PDF blob
+    const dummyPdfBlob = new Blob(['Dummy PDF Content'], { type: 'application/pdf' });
     
-    if (downloadUrl) {
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = 'submitted_document.pdf'; // Set the desired file name here
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else {
-      // Handle the case where the document hasn't been uploaded yet
-      alert('Document has not been uploaded yet.');
-    }
+    // Create a blob URL for the dummy PDF
+    const url = window.URL.createObjectURL(dummyPdfBlob);
+    
+    // Create a temporary anchor element and trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dummy_document.pdf'; // Set the desired file name here
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    // Release the blob URL
+    window.URL.revokeObjectURL(url);
   };
 
   return (
     <div className="organization-details">
-      <h2 className="heading">Organization Details</h2>
+      <h2 className="heading">
+      <Link to="/AOL" className="back-arroww"><FaArrowLeft /></Link>  Organization Details</h2>
       <div className="info">
         <div className="info-item">
           <span className="label">Name:</span> {organization.name}
@@ -63,7 +68,7 @@ const Organization1 = () => {
         <div className="info-item">
           <span className="label">Number:</span> {organization.number}
         </div>
-         <div className="info-item">
+        <div className="info-item">
         <span className="label">Submitted document:</span> {organization.legalDocuments}
           {(
             <button className="download2-button" onClick={handleDownloadSubmittedDocument}>
@@ -87,4 +92,4 @@ const Organization1 = () => {
   );
 };
 
-export default Organization1;
+export default Organization2;

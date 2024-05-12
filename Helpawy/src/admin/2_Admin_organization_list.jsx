@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa'; // Import arrow icon from react-icons/fa
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './OrganizationsList.css'; // Import styles for OrganizationsList
 
@@ -29,7 +30,11 @@ function OrganizationsList() {
 
   return (
     <div className="organizations-list-container">
-      <h2 className="organizations-list-heading">Organizations List</h2>
+      <div className="organizations-list-header">
+        <h2 className="organizations-list-heading">
+          <Link to="/AdminDashboard" className="back-arrow"><FaArrowLeft /></Link> Organizations List
+        </h2>
+      </div>
       <table className="organizations-table">
         <thead>
           <tr>
