@@ -12,7 +12,7 @@ const TransportationPicker = () => {
 
   const navigate = useNavigate();
   const handleConfirmBtn = () => {
-    navigate('/Homepage');
+    navigate('/HomePage');
   }
 
   return (
