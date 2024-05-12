@@ -9,7 +9,7 @@ const CountDownTimerComponent = ({ timerKey, durationInSeconds, handleTimerCompl
             isPlaying
             duration={durationInSeconds}
             onComplete={handleTimerCompletion}
-            colors={[['#000000']]}
+            colors={[['#FF0000']]}
             // colorsTime={[10, 5, 0]}
             className="timer-wrapper"
 

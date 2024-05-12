@@ -7,9 +7,12 @@ import Profile from './profile/profile.jsx';
 import NotificationsPage from './notifications/notifications.jsx';
 import ScheduleDropoff from './ScheduleDropoff/ScheduleDropoff.jsx';
 import OrgSendAppreciation from './OrganizationRepresentative/OrgSendAppreciation/OrgSendAppreciation.jsx';
+import SchedulePicker from './SchedulePicker/SchedulePicker.jsx';
+import TransportationPicker from './TransportationPicker/TransportationPicker.jsx';
 // import HomePage from './home/home.jsx';
 import OrgDashboard from './OrganizationRepresentative/OrgDashboard.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css'
 
 const App = () => {
@@ -24,6 +27,8 @@ const App = () => {
                     <Route path="/notifications" element={<NotificationsPage />} />
                     <Route path="/OrgChooseDropOffTime" element={<ScheduleDropoff />} />
                     <Route path="/OrgSendAppreciation" element={<OrgSendAppreciation />} />
+                    <Route path='/DonateSchedPicker'element={<SchedulePicker/>}/>
+                    <Route path='/DonateTransportPicker'element={<TransportationPicker/>}/>
                 </Routes>
             </Router>
             {/* <TestList /> */}
