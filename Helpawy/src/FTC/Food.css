@@ -1,0 +1,41 @@
+.food-donation-component {
+    background-color: #555; /* Light gray background */
+    color: #333; /* Dark text color */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .food-donation-component h1 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .filter-options select {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .food-donation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .food-donation-item {
+    background-color: #fff; /* White background for each item */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for each item */
+  }
+  
+  .food-donation-item h2 {
+    margin-bottom: 10px;
+  }
+  
+  .food-donation-item:hover {
+    background-color: #F44336;
+    cursor: pointer;
+    color: #fff;
+  }
+  

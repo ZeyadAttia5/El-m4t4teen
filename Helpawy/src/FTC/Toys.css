@@ -1,0 +1,54 @@
+.toy-donation-component {
+    background-color: #555;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .toy-donation-component h1 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .toy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .toy-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toy-item h2 {
+    margin-bottom: 10px;
+  }
+  
+  .toy-item:hover {
+    background-color: purple;
+    color:#fff;
+    cursor: pointer;
+  }
+  
+  .toy-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-details-button {
+    background: none;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    float: right;
+  }
+  

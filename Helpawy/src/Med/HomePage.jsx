@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const navigate = useNavigate();
+
   const handleMedicalDonationClick = () => {
     navigate('/MedDashboard');
   };
@@ -19,7 +20,7 @@ const HomePage = () => {
   };
 
   const handleFoodDonationClick = () => {
-    // Handle navigation or other actions related to food donation
+    navigate('/FoodDonation');
   };
 
   const handleClothesDonationClick = () => {
@@ -27,7 +28,7 @@ const HomePage = () => {
   };
 
   const handleToyDonationClick = () => {
-    // Handle navigation or other actions related to toy donation
+    navigate('/ToyDonation');
   };
 
   return (
@@ -51,7 +52,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="donation-row">
-          <div className="donation-component food-donation">
+          <div className="donation-component food-donation" onClick={handleFoodDonationClick}>
             <img src={foodDonationImage} alt="Food Donation" />
             <div className="overlay"></div>
             <h2>Food Donation</h2>
@@ -63,8 +64,8 @@ const HomePage = () => {
           </div>
         </div>
         <div className="donation-row">
-          <div className="donation-component toy-donation">
-            <img src={toyDonationImage} alt="Toy Donation" />
+          <div className="donation-component toy-donation" onClick={handleToyDonationClick}>
+            <img src={toyDonationImage} alt="Toy Donation"  />
             <div className="overlay"></div>
             <h2>Toy Donation</h2>
           </div>
