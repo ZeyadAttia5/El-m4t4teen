@@ -1,9 +1,9 @@
 import './NavBar.css'; // Import your custom CSS file
-import { AppBar, Toolbar, Typography, IconButton, Badge, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the Link component
 import { Home, Person } from '@mui/icons-material';
-import OrgNotf from '../OrganizationRepresentative/OrgNotification/OrgNotf.jsx';
+import OrgNotf from '../OrgNotification/OrgNotf.jsx';
 
 const Navbar = () => {
 
@@ -19,10 +19,17 @@ const Navbar = () => {
     setProfileAnchorEl(event.currentTarget);
   };
 
+  const handleProfileSettings = () => {
+    navigate('settings');
+  };
+
   const handleProfileClose = () => {
     setProfileAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    navigate('/login');
+  };
 
   return (
     <>
@@ -45,8 +52,8 @@ const Navbar = () => {
             open={Boolean(profileAnchorEl)}
             onClose={handleProfileClose}
           >
-            <MenuItem onClick={handleProfileClose}>Settings</MenuItem>
-            <MenuItem onClick={handleProfileClose}>Log out</MenuItem>
+            <MenuItem onClick={handleProfileSettings}>Settings</MenuItem>
+            <MenuItem onClick={handleLogout}>Log out</MenuItem>
           </Menu>
 
           <OrgNotf />
