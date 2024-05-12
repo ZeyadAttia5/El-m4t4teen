@@ -12,7 +12,7 @@ const Navbar = () => {
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
 
   const handleHomeClick = () => {
-    navigate('/');
+    navigate('/OrgDashboard');
   }
 
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    navigate('/login');
+    navigate('/');
   };
 
   return (

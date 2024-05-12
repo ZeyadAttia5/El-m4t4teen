@@ -48,7 +48,7 @@ import Settings from './Settings/Settings.jsx';
 
     return (
       <Router>
-        {/* <Navbar /> */}
+        
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/AOL" element={<AOL />} />
@@ -89,6 +89,7 @@ import Settings from './Settings/Settings.jsx';
           <Route path='/DonateTransportPicker' element={<TransportationPicker />} />
           <Route path='/OrgRepr/NewPost' element={<OrgNewPost />} />
           <Route path='settings' element={<Settings />} />
+
         </Routes>
       </Router>
 

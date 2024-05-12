@@ -173,6 +173,7 @@ const PostsContainer = () => {
             value={filter}
             onChange={handleFilterChange}
             label="Filter by"
+            className='filter-select'
           >
             <MenuItem value="all">All</MenuItem>
             <MenuItem value="fulfilled">Fulfilled</MenuItem>

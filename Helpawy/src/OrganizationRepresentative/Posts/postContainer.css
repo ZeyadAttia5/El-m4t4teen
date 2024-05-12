@@ -1,41 +1,9 @@
-/* .posts-container {
-    background-color: gray;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 200px;
-  }
-  
-  .filter-dropdown {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .posts-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: stretch
-  }
-  
-  .posts-grid > div {
-    flex-basis: calc(50% - 10px);
-  } */
+.filter-select{
+  background-color: #fff; /* Darker background color */
+  color: #333; /* Light text color for contrast */
 
-.containerRoot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  background-color: gray;
-  padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .containerRoot {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
 
 .listContainer {
   display: grid;
@@ -46,19 +14,23 @@
 .donor-info {
   padding: 10px;
   margin-top: 20px;
+  background-color: #444; /* Darker background color */
+  color: #fff; /* Light text color for contrast */
 }
 
 .request-info {
   padding: 10px;
+  background-color: #444; /* Darker background color */
+  color: #fff; /* Light text color for contrast */
 }
-
 
 .MuiIconButton-root.MuiButtonBase-root.icon-button {
-    border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff; /* Darker background color */
+  color: #333; /* Light text color for contrast */
 }
 
-
 .MuiButtonBase-root:hover {
-    background-color: gray;
-    border-radius: 5px;
+  background-color: gray; /* Darker hover color */
+  border-radius: 5px;
 }

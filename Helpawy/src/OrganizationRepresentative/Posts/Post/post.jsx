@@ -1,58 +1,3 @@
-// import { Card, CardContent, CardMedia, Button } from '@mui/material';
-// import PropTypes from 'prop-types';
-// import './post.css'; // Import CSS file for styling
-
-// const OrganizationPostCard = ({ post, onDelete, onView }) => {
-
-
-//     const handleViewDetailsClick = () => {
-//         onView();
-//     };
-
-//     const handleDeleteClick = () => {
-//         onDelete(post.id);
-//     };
-
-//     return (
-//         <div className='post-card-container'>
-//             <Card className="post-card">
-//                 <CardContent>
-//                     <h2 className="post-title">{post.title}</h2>
-//                     <p className="post-description">{post.description}</p>
-//                     <p>Quantity Requested: {post.quantity_requested} </p>
-//                     <p>Quantity Fulfilled: {post.quantity_fulfilled} </p>
-//                 </CardContent>
-//                 <CardMedia
-//                     component="img"
-//                     image={post.image}
-//                     className='post-image'
-//                     alt={post.title}
-//                 />
-//                 <CardContent className="card-content">
-//                     <div className="button-container">
-//                         <Button variant="contained" className="details-button" onClick={handleViewDetailsClick}>View Details</Button>
-//                         {post.fulfilled === true && (
-//                             <Button variant="contained" className="delete-button details-button" onClick={handleDeleteClick}>Delete</Button>
-//                         )}
-//                     </div>
-//                 </CardContent>
-//             </Card>
-
-//         </div>
-//     );
-// };
-
-// OrganizationPostCard.propTypes = {
-//     post: PropTypes.object.isRequired,
-//     onDelete: PropTypes.func.isRequired,
-//     onView: PropTypes.func.isRequired,
-// };
-
-// export default OrganizationPostCard;
-
-
-
-
 import { IconButton, Card, CardContent, Typography, CardActions, Tooltip, Menu, MenuItem } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -90,7 +35,7 @@ const PostCard = ({ post, onDelete, onViewDetails, onUpdateDetails }) => {
   return (
     <Card variant="outlined" className="grid-container">
       <CardContent className='top-card-content'>
-        <div className='post-info'>
+        <div className='post-info43'>
           <Typography variant="h5" component="div">
             {post.title}
           </Typography>
