@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import './ScheduleDropoff.css';
+import { useNavigate } from 'react-router-dom';
+import propTypes from 'prop-types';
+
 const SchedulePicker = ({ onSelectTimeSlot }) => {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
+  const navigate = useNavigate();
 
   const handleSelectTimeSlot = (timeSlot) => {
     setSelectedTimeSlot(timeSlot);
+    navigate('/OrgSendAppreciation');
     onSelectTimeSlot(timeSlot);
   };
 
@@ -26,6 +31,10 @@ const SchedulePicker = ({ onSelectTimeSlot }) => {
       </div>
     </div>
   );
+};
+
+SchedulePicker.propTypes = {
+  onSelectTimeSlot: propTypes.func.isRequired,
 };
 
 export default SchedulePicker;

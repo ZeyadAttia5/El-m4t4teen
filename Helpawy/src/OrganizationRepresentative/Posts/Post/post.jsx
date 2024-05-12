@@ -53,59 +53,102 @@
 
 
 
-import { IconButton, Card, CardContent, Typography, CardActions } from '@mui/material';
+import { IconButton, Card, CardContent, Typography, CardActions, Tooltip } from '@mui/material';
+import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ViewIcon from '@mui/icons-material/Visibility';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import PropTypes from 'prop-types';
 import './PostCard.css'; // Import the CSS file
 
 const PostCard = ({ post, onDelete, onViewDetails }) => {
-    const handleDelete = () => {
-        onDelete(post.id);
-    };
 
-    const handleViewDetails = () => {
-        onViewDetails(post);
-    };
+  const [anchorEl, setAnchorEl] = useState(null);
 
-    return (
-        <Card variant="outlined" className="cardRoot">
-            <CardContent>
-                <Typography variant="h5" component="div">
-                    {post.title}
-                </Typography>
-                <Typography color="text.secondary" gutterBottom>
-                    {post.type}
-                </Typography>
-                <Typography color="text.secondary" gutterBottom>
-                    {`ID: ${post.id}`}
-                </Typography>
-                <Typography variant="h5" component="div">
-                    {post.description}
-                </Typography>
-                <Typography variant="h7" component="div" color="text.secondary">
-                    {`\nRequest ${post.fulfilled ? 'fulfilled' : 'not fulfilled'}`}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing className="cardActionsRoot">
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-                {(post.fulfilled === true && <IconButton aria-label="Delete" onClick={handleDelete} className="iconButton">
-                    <DeleteIcon htmlColor='red' />
-                    <Typography>Delete</Typography>
-                </IconButton>)}
-                <IconButton aria-label="View Details" onClick={handleViewDetails} className="iconButton">
-                    <ViewIcon htmlColor='blue' />
-                    <Typography>View Details</Typography>
-                </IconButton>
-            </CardActions>
-        </Card>
-    );
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleDelete = () => {
+    onDelete(post.id);
+  };
+
+  const handleViewDetails = () => {
+    onViewDetails(post);
+  };
+  return (
+    <Card variant="outlined" className="cardRoot">
+      <CardContent>
+        <div className='post-title'>
+          <Typography variant="h5" component="div">
+            {post.title}
+          </Typography>
+          <IconButton aria-label="More options" onClick={handleClick}>
+            <MoreVertIcon />
+          </IconButton>
+        </div>
+        <div className='second-bar'>
+          <div className='post-info'>
+            <Typography color="text.secondary" gutterBottom>
+              {post.type}
+            </Typography>
+            <Typography color="text.secondary" gutterBottom>
+              {`ID: ${post.id}`}
+            </Typography>
+            <Typography variant="h5" component="div">
+              {post.description}
+            </Typography>
+
+          </div>
+          {
+            post.fulfilled ? (
+              <Tooltip title="Fulfilled" className='top-Bar-info'>
+                <CheckCircleIcon style={{ color: 'green' }} />
+                <Typography variant="h5" color='text.secondary' component="div"> Fulfilled </Typography>
+              </Tooltip>
+            ) : (
+              <Tooltip title="Unfulfilled" className='top-Bar-info'>
+                <CancelIcon style={{ color: 'red' }} />
+                <Typography variant="h5" color='text.secondary' component="div"> Unfulfilled </Typography>
+              </Tooltip>
+            )
+          }
+        </div>
+      </CardContent>
+      <CardActions>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleDelete}>
+            <DeleteIcon htmlColor="red" />
+            <Typography>Delete</Typography>
+          </MenuItem>
+          {/* <MenuItem onClick={handleUpdate}>Update</MenuItem> */}
+        </Menu>
+        <IconButton aria-label="View Details" onClick={handleViewDetails} className="iconButton">
+          <ViewIcon htmlColor="blue" />
+          <Typography>View Details</Typography>
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
 };
 
 PostCard.propTypes = {
-    post: PropTypes.object.isRequired,
-    onDelete: PropTypes.func.isRequired,
-    onViewDetails: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onViewDetails: PropTypes.func.isRequired,
 };
 
 export default PostCard;

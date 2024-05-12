@@ -1,14 +1,33 @@
 // my User stories:     55, 56, 57, 58, 59, 66, 67, 68, 69, 70, 71, 72, 73
 // the ones I finished: 55, 56, 57, 58, 59, 66, 67, 68,   , 70, 71, 72, 73
 
-import PostsContainer from './OrganizationRepresentative/Posts/PostsContainer.jsx'
+// import PostsContainer from './OrganizationRepresentative/Posts/PostsContainer.jsx'
+import Navbar from './NavigationBar/NavBar'
+import Profile from './profile/profile.jsx';
+import NotificationsPage from './notifications/notifications.jsx';
+import ScheduleDropoff from './ScheduleDropoff/ScheduleDropoff.jsx';
+import OrgSendAppreciation from './OrganizationRepresentative/OrgSendAppreciation/OrgSendAppreciation.jsx';
+// import HomePage from './home/home.jsx';
+import OrgDashboard from './OrganizationRepresentative/OrgDashboard.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css'
 
 const App = () => {
 
     return (
         <>
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<OrgDashboard />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/notifications" element={<NotificationsPage />} />
+                    <Route path="/OrgChooseDropOffTime" element={<ScheduleDropoff />} />
+                    <Route path="/OrgSendAppreciation" element={<OrgSendAppreciation />} />
+                </Routes>
+            </Router>
             {/* <TestList /> */}
-            <PostsContainer/>
+            {/* <PostsContainer /> */}
         </>
     );
 

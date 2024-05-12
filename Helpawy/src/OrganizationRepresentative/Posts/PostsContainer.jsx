@@ -127,9 +127,7 @@ const PostsContainer = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const handleDelete = (id) => {
-    const updatedPosts = posts.map(postGroup =>
-      postGroup.filter(post => post.id !== id)
-    );
+    const updatedPosts = posts.filter(post => post.id !== id);
     setPosts(updatedPosts);
   };
 
