@@ -25,7 +25,7 @@ const App = () => {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<OrgDashboard />} />
+                    <Route path="/OrgDashBoard" element={<OrgDashboard />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/notifications" element={<NotificationsPage />} />
                     <Route path="/OrgChooseDropOffTime" element={<ScheduleDropoff />} />
