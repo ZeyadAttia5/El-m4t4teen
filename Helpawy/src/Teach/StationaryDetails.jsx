@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './TeacherDetails.css';
-
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const teachers = [
   { id: 1, name: 'Physics Book', type: 'Book', amount: 3 },
   { id: 2, name: 'Math Book', type: 'Book', amount: 5 },
@@ -48,7 +49,8 @@ const StationaryDetails = () => {
 
   return (
     <div className="teacher-details-container">
-      <h2>{teacher.name}</h2>
+      <h1 className="heading">
+      <Link to="/stationary-lists" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> {teacher.name} </h1>
       <p><strong>Type:</strong> {teacher.type}</p>
       <p><strong>Amount Required:</strong> {teacher.amount}</p>
       <label htmlFor="quantity">Quantity:</label>

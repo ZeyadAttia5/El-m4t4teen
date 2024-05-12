@@ -4,7 +4,8 @@ import './BookDetails.css';
 import physicsbook from './assets/Physicsbookimage.jpg';
 import programmingbook from './assets/ProgrammingBookimage.png';
 import itbook from './assets/Informationtechnologybookimage.jpg';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const BookDetails = () => {
   const { id } = useParams();
   const [books, setBooks] = useState([
@@ -39,7 +40,8 @@ const BookDetails = () => {
 
   return (
     <div className="book-details-container">
-      <h2>{book.name}</h2>
+      <h2 className="heading">
+      <Link to="/book-selection" className="back-arroww" id = "LinkArrow"><FaArrowLeft /></Link> {book.name} </h2>
       <img src={book.image} alt={book.name} className="book-image" />
       <p><strong>Author:</strong> {book.author}</p>
       <p><strong>Edition:</strong> {book.edition}</p>
