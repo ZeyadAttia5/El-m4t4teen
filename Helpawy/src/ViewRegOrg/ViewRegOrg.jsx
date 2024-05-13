@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../donorNavbar/NavBar.jsx'
-
+import './ViewRegOrg.css';
 
 const organizations = [
   { id: 1, name: 'Hospital 1', area: '5th Settlement', governorate: 'Cairo', type: 'Hospital' },
@@ -69,42 +69,43 @@ const ViewRegOrg = () => {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="org-container">
 
         <input
           type="text"
           placeholder="Search organizations"
           value={searchTerm}
           onChange={handleSearchChange}
+          className="org-search"
         />
-        <select value={selectedArea} onChange={handleAreaChange}>
+        <select value={selectedArea} onChange={handleAreaChange} className="org-filter">
           <option value="">Filter by Area</option>
           {areas.map((area, index) => (
             <option key={index} value={area}>{area}</option>
           ))}
         </select>
-        <select value={selectedGovernorate} onChange={handleGovernorateChange}>
+        <select value={selectedGovernorate} onChange={handleGovernorateChange} className="org-filter">
           <option value="">Filter by Governorate</option>
           {governorates.map((governorate, index) => (
             <option key={index} value={governorate}>{governorate}</option>
           ))}
         </select>
-        <select value={selectedType} onChange={handleTypeChange}>
+        <select value={selectedType} onChange={handleTypeChange} className="org-filter">
           <option value="">Filter by Organization Type</option>
           {types.map((type, index) => (
             <option key={index} value={type}>{type}</option>
           ))}
         </select>
-        <ul>
+        <ul className="org-list">
           {filteredOrganizations.map(org => (
-            <li key={org.id}>
+            <li key={org.id} className="org-item">
               {org.name}
-              <button onClick={() => showDetails(org)}>Details</button>
-              <button onClick={() => deleteOrganization(org.id)}>Delete</button>
+              <button onClick={() => showDetails(org)} className="org-details-btn">Details</button>
+              <button onClick={() => deleteOrganization(org.id)} className="org-delete-btn">Delete</button>
             </li>
           ))}
         </ul>
-        <button onClick={downloadPlaceholder}>Download Placeholder</button>
+        <button onClick={downloadPlaceholder} className="org-download-btn">Download Placeholder</button>
       </div>
     </>
   );

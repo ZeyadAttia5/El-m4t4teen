@@ -1,0 +1,44 @@
+.org-container {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .org-search,
+  .org-filter {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+  }
+  
+  .org-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .org-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #444;
+  }
+  
+  .org-details-btn,
+  .org-delete-btn,
+  .org-download-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .org-details-btn:hover,
+  .org-delete-btn:hover,
+  .org-download-btn:hover {
+    background-color: #666;
+  }
