@@ -39,6 +39,7 @@ import TransportationPicker from './TransportationPicker/TransportationPicker.js
 // import HomePage from './home/home.jsx';
 import OrgDashboard from './OrganizationRepresentative/OrgDashboard.jsx';
 import OrgNewPost from './OrganizationRepresentative/RequestPost/RequestPost.jsx';
+import ViewRegOrg from './ViewRegOrg/ViewRegOrg.jsx';
 import Settings from './Settings/Settings.jsx';
 
 
@@ -87,6 +88,7 @@ import Settings from './Settings/Settings.jsx';
           <Route path='/DonateSchedPicker' element={<SchedulePicker />} />
           <Route path='/DonateTransportPicker' element={<TransportationPicker />} />
           <Route path='/OrgRepr/NewPost' element={<OrgNewPost />} />
+          <Route path='/organization' element={<ViewRegOrg />} />
           <Route path='settings' element={<Settings />} />
 
         </Routes>

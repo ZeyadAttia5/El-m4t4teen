@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Navbar from '../donorNavbar/NavBar.jsx'
+
 
 const organizations = [
   { id: 1, name: 'Hospital 1', area: '5th Settlement', governorate: 'Cairo', type: 'Hospital' },
@@ -65,42 +67,46 @@ const ViewRegOrg = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search organizations"
-        value={searchTerm}
-        onChange={handleSearchChange}
-      />
-      <select value={selectedArea} onChange={handleAreaChange}>
-        <option value="">Filter by Area</option>
-        {areas.map((area, index) => (
-          <option key={index} value={area}>{area}</option>
-        ))}
-      </select>
-      <select value={selectedGovernorate} onChange={handleGovernorateChange}>
-        <option value="">Filter by Governorate</option>
-        {governorates.map((governorate, index) => (
-          <option key={index} value={governorate}>{governorate}</option>
-        ))}
-      </select>
-      <select value={selectedType} onChange={handleTypeChange}>
-        <option value="">Filter by Organization Type</option>
-        {types.map((type, index) => (
-          <option key={index} value={type}>{type}</option>
-        ))}
-      </select>
-      <ul>
-        {filteredOrganizations.map(org => (
-          <li key={org.id}>
-            {org.name}
-            <button onClick={() => showDetails(org)}>Details</button>
-            <button onClick={() => deleteOrganization(org.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={downloadPlaceholder}>Download Placeholder</button>
-    </div>
+    <>
+      <Navbar />
+      <div>
+
+        <input
+          type="text"
+          placeholder="Search organizations"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        <select value={selectedArea} onChange={handleAreaChange}>
+          <option value="">Filter by Area</option>
+          {areas.map((area, index) => (
+            <option key={index} value={area}>{area}</option>
+          ))}
+        </select>
+        <select value={selectedGovernorate} onChange={handleGovernorateChange}>
+          <option value="">Filter by Governorate</option>
+          {governorates.map((governorate, index) => (
+            <option key={index} value={governorate}>{governorate}</option>
+          ))}
+        </select>
+        <select value={selectedType} onChange={handleTypeChange}>
+          <option value="">Filter by Organization Type</option>
+          {types.map((type, index) => (
+            <option key={index} value={type}>{type}</option>
+          ))}
+        </select>
+        <ul>
+          {filteredOrganizations.map(org => (
+            <li key={org.id}>
+              {org.name}
+              <button onClick={() => showDetails(org)}>Details</button>
+              <button onClick={() => deleteOrganization(org.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+        <button onClick={downloadPlaceholder}>Download Placeholder</button>
+      </div>
+    </>
   );
 };
 

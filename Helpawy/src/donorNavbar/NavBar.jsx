@@ -4,6 +4,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the Link component
 import { Home, Person } from '@mui/icons-material';
+import BusinessIcon from '@mui/icons-material/Business';
+import GroupIcon from '@mui/icons-material/Group';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -52,6 +54,10 @@ const Navbar = () => {
         navigate('/');
     };
 
+    const handleOrganizationClick = () => {
+        navigate('/organization');
+    }
+
     return (
         <>
             <AppBar position="static" className="navbar">
@@ -67,6 +73,10 @@ const Navbar = () => {
                     <IconButton color="inherit" onClick={handleProfileClick} className="navbar__icon">
                         <Person />
                     </IconButton>
+                    <IconButton color="inherit" onClick={handleOrganizationClick} className="navbar__icon">
+                        <BusinessIcon />
+                    </IconButton>
+
 
                     <Menu
                         anchorEl={profileAnchorEl}
